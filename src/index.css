@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0077BE;
+  --color-primary-light: #0077BE20;
+  --color-red: #dc2626;
+  --color-red-dark: #b91c1c;
+  --color-body: #4a5568;
+  --color-heading: #1a202c;
+  --color-surface: #f7fafc;
+}
+
+@utility rounded-badge {
+  border-radius: 9999px;
+}
+
+/* Affiliated Companies Swiper Styles */
+.affiliated-swiper {
+  padding-bottom: 50px !important;
+}
+
+.affiliated-swiper .swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.5;
+}
+
+.affiliated-swiper .swiper-pagination-bullet-active {
+  background-color: white !important;
+  opacity: 1;
+}
+
+.affiliated-swiper .swiper-button-prev,
+.affiliated-swiper .swiper-button-next {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.affiliated-swiper .swiper-button-prev:after,
+.affiliated-swiper .swiper-button-next:after {
+  font-size: 18px;
+}
+
+.affiliated-swiper .swiper-button-prev:hover,
+.affiliated-swiper .swiper-button-next:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+html {
+  scroll-behavior: smooth;
+}
