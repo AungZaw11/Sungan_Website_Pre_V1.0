@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaShip, FaBars, FaTimes } from 'react-icons/fa';
-import ShipIcon from '../images/Logo-2.png'; 
+import ShipIcon from '../images/logo-2.png'; 
 
 export default function Navigation() {
   const location = useLocation();
