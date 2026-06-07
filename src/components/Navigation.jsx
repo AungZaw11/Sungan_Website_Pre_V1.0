@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaShip, FaBars, FaTimes } from 'react-icons/fa';
+import ShipIcon from '../images/logo-2.png';
+
 
 export default function Navigation() {
   const location = useLocation();
@@ -22,13 +24,15 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-2">
             <div className="p-2 rounded-lg bg-primary">
-              <FaShip className="w-6 h-6 text-white" />
+              <img src={ShipIcon} alt="Ship Icon" className="w-6 h-6" />
             </div>
             <span className="font-bold text-xl text-heading tracking-tight">
               SUNGAN <span className="text-primary">SHIPPING</span>
             </span>
+         
           </Link>
-
+           
+           
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link

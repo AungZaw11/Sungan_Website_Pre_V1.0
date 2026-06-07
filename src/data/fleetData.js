@@ -1,3 +1,17 @@
+// data/fleetData.js
+
+// 1. ပုံတွေကို import လုပ်ပါ
+import HSGloryImg from '../ship/HS.png';
+import FrontierImg from '../ship/Fronttier.png';
+import EnterpriseImg from '../ship/EnterPrise.png';
+import CrystalImg from '../ship/Crystal.png';
+import EasternDreamImg from '../ship/Eastern Dream.png';
+import OceanLeaderImg from '../ship/Ocean Leader.png';
+import SunStarImg from '../ship/Sun Star.png';
+import Pride1Img from '../ship/Pride 1.png';
+import SunRioImg from '../ship/Sun Rio.png';
+import VenusImg from '../ship/Venus.png';
+
 export const bulkFleet = [
   {
     name: 'HS GLORY',
@@ -7,7 +21,7 @@ export const bulkFleet = [
     dwt: '18,978',
     class: 'KR',
     country: 'Korea',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?q=80&w=800&auto=format&fit=crop'
+    image: HSGloryImg,
   },
   {
     name: 'ORIENTAL FRONTIER',
@@ -17,7 +31,7 @@ export const bulkFleet = [
     dwt: '74,366',
     class: 'KR',
     country: 'Korea',
-    image: 'https://images.unsplash.com/photo-1494412519320-ce68ade53f53?q=80&w=800&auto=format&fit=crop'
+    image: FrontierImg,
   },
   {
     name: 'ORIENTAL ENTERPRISE',
@@ -27,7 +41,7 @@ export const bulkFleet = [
     dwt: '88,125',
     class: 'KR',
     country: 'Korea',
-    image: 'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=800&auto=format&fit=crop'
+    image: EnterpriseImg,
   },
   {
     name: 'CS CRYSTAL',
@@ -37,8 +51,8 @@ export const bulkFleet = [
     dwt: '30,477',
     class: 'KR',
     country: 'Marshall',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop'
-  }
+    image: CrystalImg,
+  },
 ];
 
 export const passengerFleet = [
@@ -50,7 +64,7 @@ export const passengerFleet = [
     dwt: '3,408',
     class: 'KR',
     country: 'Korea',
-    image: 'https://images.unsplash.com/photo-1599640842225-85d111c60e6b?q=80&w=800&auto=format&fit=crop'
+    image: EasternDreamImg,
   },
   {
     name: 'OCEAN LEADER',
@@ -60,7 +74,7 @@ export const passengerFleet = [
     dwt: '9,756',
     class: 'KR',
     country: 'Korea',
-    image: 'https://images.unsplash.com/photo-1548345680-f5475ea90f46?q=80&w=800&auto=format&fit=crop'
+    image: OceanLeaderImg,
   },
   {
     name: 'SUN STAR',
@@ -70,7 +84,7 @@ export const passengerFleet = [
     dwt: '3,294',
     class: 'KR',
     country: 'Korea',
-    image: 'https://images.unsplash.com/photo-1520188740392-674620d4f215?q=80&w=800&auto=format&fit=crop'
+    image: SunStarImg,
   },
   {
     name: 'OCEAN PRIDE1',
@@ -80,7 +94,7 @@ export const passengerFleet = [
     dwt: '3,450',
     class: 'IBS',
     country: 'PANAMA',
-    image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=800&auto=format&fit=crop'
+    image: Pride1Img,
   },
   {
     name: 'SUN RIO',
@@ -90,7 +104,7 @@ export const passengerFleet = [
     dwt: '2,577',
     class: 'OMCS',
     country: 'PANAMA',
-    image: 'https://images.unsplash.com/photo-1522758971460-1d21eed7dc1d?q=80&w=800&auto=format&fit=crop'
+    image: SunRioImg,
   },
   {
     name: 'EASTERN VENUS (PASSENGER, PURE CRUSER)',
@@ -100,6 +114,6 @@ export const passengerFleet = [
     dwt: '4,202 MT',
     class: 'RS',
     country: 'PANAMA',
-    image: 'https://images.unsplash.com/photo-1540202404-b711c040d6b5?q=80&w=800&auto=format&fit=crop'
-  }
+    image: VenusImg,
+  },
 ];

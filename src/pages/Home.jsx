@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { FaArrowRight, FaCheck, FaUsers, FaShip, FaWrench, FaBuilding } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import HomeHeroImg from '../images/Home.jpg';
+import HomeAboutImg from '../images/Home_2.jpg';
+import MissionVisionImg from '../images/Mission Vision 1.png';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,9 +27,7 @@ export default function Home() {
       <section className="relative h-[600px] md:h-[722px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1494412519320-ce68ade53f53?q=80&w=2940&auto=format&fit=crop")'
-          }}
+          style={{ backgroundImage: `url(${HomeHeroImg})` }}
         />
         <div
           className="absolute inset-0 z-10"
@@ -63,8 +64,8 @@ export default function Home() {
               to="/contact"
               className="w-full sm:w-auto px-8 py-4 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2 shadow-sm"
               style={{ backgroundColor: '#dc2626' }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#b91c1c'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#dc2626'}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#b91c1c'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#dc2626'}
             >
               Get a Quote <FaArrowRight className="w-5 h-5" />
             </Link>
@@ -94,7 +95,8 @@ export default function Home() {
               As a 10 years of experienced company in the shipping industry, We
               provide our best service to our clients with immediate response
               and great discernment. We pursue to achieve growth together with
-              our clients.
+              our clients with developing skills for members of the company.
+              Also we aim to achieve fulfillment.
             </p>
             <Link
               to="/about"
@@ -112,15 +114,15 @@ export default function Home() {
             className="relative"
           >
             <img
-              src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?q=80&w=2940&auto=format&fit=crop"
+              src={HomeAboutImg}
               alt="Shipping containers at port"
-              className="rounded-tl-[40px] rounded-br-[40px] shadow-2xl object-cover h-[400px] w-full"
+              className="rounded-2xl shadow-2xl h-[400px] w-[500px] object-cover"
             />
           </motion.div>
         </div>
       </section>
 
-             {/* Mission & Vision Section with Image */}
+      {/* Mission & Vision Section with Image */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
@@ -133,9 +135,9 @@ export default function Home() {
             className="relative"
           >
             <img
-              src="src/images/Mission Vision 1.png"
+              src={MissionVisionImg}
               alt="Mission & Vision"
-              className="rounded-2xl shadow-2xl h-[200px] w-full"
+              className="rounded-2xl shadow-2xl h-[200px] w-full object-cover"
             />
           </motion.div>
 
@@ -161,7 +163,7 @@ export default function Home() {
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                 <h3 className="text-xl font-bold text-primary mb-2">Foundation of Base</h3>
                 <p className="text-body">
-                  Ship management Company' Foundation of base
+                  Ship management Company Foundation of base
                 </p>
               </div>
 
@@ -169,7 +171,7 @@ export default function Home() {
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                 <h3 className="text-xl font-bold text-primary mb-2">Achieving a common goal</h3>
                 <p className="text-body">
-                  Achieve common goals through mutual encouragement with customers.
+                  Achieve common goals through mutual encouragement with clients
                 </p>
               </div>
 
@@ -185,14 +187,12 @@ export default function Home() {
         </div>
       </section>
 
-           {/* Affiliated Companies - Infinite Slider */}
+      {/* Affiliated Companies - Infinite Slider */}
       <section className="py-24 w-full relative overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1494412519320-ce68ade53f53?q=80&w=2940&auto=format&fit=crop")'
-          }}
+          style={{ backgroundImage: `url(${HomeAboutImg})` }}
         />
         
         {/* Dark Overlay */}
@@ -271,7 +271,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: FaUsers, title: 'Crew Management', desc: 'SUNGAN Shipping adopts an innovative system and provide a differentiated services based on...' },
+            { icon: FaUsers, title: 'Crew Management', desc: 'SUNGAN Shipping adopts an innovative system and provides a differentiated services based on...' },
             { icon: FaShip, title: 'Ship Management', desc: 'SUNGAN Shipping guarantees the reliable management through open communication with...' },
             { icon: FaWrench, title: "Repair / Supply of Ship's Spare Parts", desc: "Available to supply original ship's spare parts with competitive price" },
             { icon: FaBuilding, title: 'New Building Supervising', desc: 'Comprehensive supervision services for new ship building projects.' }
@@ -297,15 +297,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 w-full relative overflow-hidden bg-primary">
+      {/* CTA Banner with Home_2 as Background */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 w-full relative overflow-hidden">
+        {/* Background Image - Home_2.jpg */}
         <div
-          className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2940&auto=format&fit=crop")'
-          }}
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${HomeAboutImg})` }}
         />
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        {/* Dark Overlay for better text readability */}
+        <div className="absolute inset-0 z-10 bg-black/60" />
+
+        <div className="max-w-7xl mx-auto relative z-20 flex flex-col md:flex-row items-center justify-between gap-8">
           <h2 className="text-2xl md:text-3xl font-semibold text-white max-w-2xl text-center md:text-left">
             "Reach out to our team for comprehensive ship management services."
           </h2>
