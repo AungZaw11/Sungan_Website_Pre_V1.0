@@ -6,7 +6,7 @@ import ShipIcon from '../images/logo-2.png';
 
 export default function Navigation() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);cd
   
   const links = [
     { name: 'Home', path: '/' },
