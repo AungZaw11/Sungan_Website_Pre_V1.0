@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaShip, FaBars, FaTimes } from 'react-icons/fa';
-import ShipIcon from '../images/logo-2.png';
-
+import ShipIcon from '../images/Logo-2.png'; 
 
 export default function Navigation() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);cd
+  const [isOpen, setIsOpen] = useState(false);
   
   const links = [
     { name: 'Home', path: '/' },
@@ -29,9 +28,7 @@ export default function Navigation() {
             <span className="font-bold text-xl text-heading tracking-tight">
               SUNGAN <span className="text-primary">SHIPPING</span>
             </span>
-         
           </Link>
-           
            
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
