@@ -1,13 +1,12 @@
-// src/pages/Contact.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
   FaBuilding, FaPhone, FaEnvelope, FaCheckCircle,
   FaExclamationCircle, FaMapMarkerAlt, FaClock,
   FaGlobe, FaLinkedin, FaFacebook, FaTwitter
 } from 'react-icons/fa';
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
-import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -51,11 +50,10 @@ const officeLocations = [
 ];
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    subject: '',
     message: ''
   });
   const [status, setStatus] = useState({ type: '', message: '' });
@@ -81,19 +79,19 @@ export default function Contact() {
       if (response.ok) {
         setStatus({
           type: 'success',
-          message: 'Message sent successfully! We will contact you within 24 hours.'
+          message: t('contact.success_message')
         });
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', message: '' });
       } else {
         setStatus({
           type: 'error',
-          message: data.error || 'Failed to send message. Please try again.'
+          message: data.error || t('contact.error_message')
         });
       }
     } catch (error) {
       setStatus({
         type: 'error',
-        message: 'Network error. Please check your connection and try again.'
+        message: t('contact.network_error')
       });
     } finally {
       setIsLoading(false);
@@ -104,7 +102,6 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col w-full bg-surface min-h-screen">
-
       {/* Contact Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -115,15 +112,14 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-6">Get in Touch</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-6">{t('contact.title')}</h2>
             <p className="text-body mb-10">
-              Have questions about our services? Looking for a quote?
-              We'd love to hear from you. Reach out to us through any of the following channels.
+              {t('contact.description')}
             </p>
 
             {/* Office Locations List */}
             <div className="space-y-6 mb-10">
-              <h3 className="text-xl font-semibold text-primary">Our Offices</h3>
+              <h3 className="text-xl font-semibold text-primary">{t('contact.our_offices')}</h3>
               {officeLocations.map((office) => (
                 <div
                   key={office.id}
@@ -153,14 +149,14 @@ export default function Contact() {
 
             {/* Contact Details */}
             <div className="bg-primary/5 rounded-2xl p-6">
-              <h3 className="text-xl font-semibold text-primary mb-4">General Inquiries</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">{t('contact.general_inquiries')}</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                     <FaPhone className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Phone</p>
+                    <p className="text-sm text-gray-500">{t('contact.phone')}</p>
                     <p className="text-body font-medium">+82-51-462-2227</p>
                   </div>
                 </div>
@@ -169,7 +165,7 @@ export default function Contact() {
                     <FaEnvelope className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Email</p>
+                    <p className="text-sm text-gray-500">{t('contact.email')}</p>
                     <p className="text-body font-medium">smd@sungan.kr</p>
                   </div>
                 </div>
@@ -178,13 +174,12 @@ export default function Contact() {
                     <FaGlobe className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Website</p>
+                    <p className="text-sm text-gray-500">{t('contact.website')}</p>
                     <p className="text-body font-medium">www.sungan.kr</p>
                   </div>
                 </div>
               </div>
             </div>
-
           </motion.div>
 
           {/* Contact Form */}
@@ -195,11 +190,10 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-              <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-2">Send Us a Message</h2>
-              <p className="text-body mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-2">{t('contact.send_message')}</h2>
+              <p className="text-body mb-6">{t('contact.form_description')}</p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Status Message */}
                 {status.message && (
                   <div className={`p-4 rounded-xl flex items-center gap-3 ${status.type === 'success'
                     ? 'bg-green-50 text-green-700 border border-green-200'
@@ -214,9 +208,8 @@ export default function Contact() {
                   </div>
                 )}
 
-                {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-heading font-medium mb-2">Full Name *</label>
+                  <label htmlFor="name" className="block text-heading font-medium mb-2">{t('contact.name')} *</label>
                   <input
                     type="text"
                     id="name"
@@ -224,14 +217,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                    placeholder="Please Fills Name"
+                    placeholder={t('contact.name_placeholder')}
                     disabled={isLoading}
                   />
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-heading font-medium mb-2">Email Address *</label>
+                  <label htmlFor="email" className="block text-heading font-medium mb-2">{t('contact.email')} *</label>
                   <input
                     type="email"
                     id="email"
@@ -239,16 +231,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-                    placeholder="email@example.com"
+                    placeholder={t('contact.email_placeholder')}
                     disabled={isLoading}
                   />
                 </div>
 
-
-
-                {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-heading font-medium mb-2">Message *</label>
+                  <label htmlFor="message" className="block text-heading font-medium mb-2">{t('contact.message')} *</label>
                   <textarea
                     id="message"
                     required
@@ -256,7 +245,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
-                    placeholder="Please provide details about your inquiry..."
+                    placeholder={t('contact.message_placeholder')}
                     disabled={isLoading}
                   />
                 </div>
@@ -275,10 +264,10 @@ export default function Contact() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Sending...
+                      {t('contact.sending')}
                     </span>
                   ) : (
-                    'Send Message'
+                    t('contact.submit')
                   )}
                 </button>
               </form>
@@ -294,7 +283,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-24"
         >
-          <h2 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-8">Find Us on Map</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-8">{t('contact.find_us')}</h2>
           <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
             <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
               <Map
@@ -337,7 +326,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="inline-block mt-3 text-primary text-sm font-medium hover:underline"
                       >
-                        Get Directions →
+                        {t('contact.get_directions')} →
                       </a>
                     </div>
                   </InfoWindow>
@@ -347,7 +336,6 @@ export default function Contact() {
           </div>
         </motion.div>
       </section>
-
     </div>
   );
 }
