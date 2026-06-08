@@ -115,3 +115,22 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'Backend is working!', time: new Date().toISOString() });
+});
+
+// Email test endpoint
+app.post('/api/test-email', async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: 'Test Email from Render',
+      text: 'If you receive this, email is working!'
+    });
+    res.json({ success: true, message: 'Test email sent!' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
