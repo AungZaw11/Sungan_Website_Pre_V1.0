@@ -1,0 +1,178 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "fleet": "Fleet",
+        "contact": "Contact"
+    },
+    "home": {
+        "title": "Global Shipping Solutions",
+        "subtitle": "The purpose of the company's establishment is to provide total solution services for ship management.",
+        "get_quote": "Get a Quote",
+        "learn_more": "Learn More",
+        "sungan_is": "SUNGAN is",
+        "description": "As a 10 years of experienced company in the shipping industry, We provide our best service to our clients with immediate response and great discernment. We pursue to achieve growth together with our clients.",
+        "mission_vision": "Our Mission & Vision",
+        "philosophy": "Company Philosophy",
+        "foundation": "Foundation of Base",
+        "foundation_desc": "Ship management Company' Foundation of base",
+        "common_goal": "Achieving a common goal",
+        "common_goal_desc": "Achieve common goals through mutual encouragement with customers.",
+        "profit": "Customer Profit Creation",
+        "profit_desc": "Creating customer profits through continuous development.",
+        "affiliated": "Affiliated Companies",
+        "our_services": "Our Services",
+        "services_desc": "Comprehensive shipping solutions tailored to your needs",
+        "crew_management": "Crew Management",
+        "ship_management": "Ship Management",
+        "repair_supply": "Repair / Supply of Ship's Spare Parts",
+        "new_building": "New Building Supervising",
+        "contact_us": "Contact Us",
+        "reach_out_text": "Reach out to our team for comprehensive ship management services."
+    },
+    "about": {
+        "title": "We are committed to do our best to create a human-oriented organization and safety system.",
+        "para1": "Surrounded on its other three sides by water, South Korea has been fostering marine workforce aiming to enter maritime.",
+        "para2": "With continued increase in economic growth and national income, however, Korea's marine industry is weakening competitiveness and lack of crew. Particularly, excellent marine technicians are also deserting the marine industry.",
+        "para3": "SUNGAN SHIPPING has paved a foundation for Korea's marine management to feel motivated about their career despite its harsh working environment.",
+        "para4": "The definition of \"Ship Management Business\" is taking over liability and risk of repair, distribution, safety operation, insurance, and crew management of ships through consignment request from ship owners. The foundation, therefore, is confidence from ship owners and professional knowledge about ships.",
+        "para5": "SUNGAN SHIPPING Co., Ltd. has accumulated expertise particularly in BULK carrier and RO-RO CARRIER & PASSENGER ship. The company has earned great evaluation and confidence from ship owners and thus, employees are proud of management of special ships.",
+        "para6": "The finest goal of an enterprise through reflecting on the past and planning for the future.",
+        "banner_text1": "SUNGAN SHIPPING Co., Ltd. improves its business systematically in accordance with ISM CODE as the policy for safety and environmental protection and is committed to endeavor to create human-oriented organizations and safety systems to a future.",
+        "banner_text2": "The company will provide safety operation and work environment to ship owners and clients.",
+        "area_of_focus": "Area of Focus",
+        "area_of_focus_subtitle": "The company will provide safety operation and work environment to ship owners and clients.",
+        "focus1": "We provide our clients safe operation and prevention of marine pollution as well as management and maintenance of their ships and asset with efficient quality management.",
+        "focus2": "We support to achieve optimal operational performance and cost efficiency for our clients by utilizing the advantages of a mix of skilled Korean crews and Myanmar crews.",
+        "focus3": "In order to maintain the vessel's best safe operation, we implement a re-joining rate and strengthen training for crews.",
+        "focus4": "We provide experienced crews with good skills for clients needs.",
+        "history": "History & To Do",
+        "organization": "Organization Chart",
+        "human_resource": "Human Resource",
+        "technology": "Technology provision services (Key person)",
+        "history_data": [
+            {
+                "year": "2015",
+                "events": [
+                    "2015.12.15 Establishment"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2016",
+                "events": [
+                    "2016.02.01 Business Start",
+                    "Management of MV MAGIC ORIENT (Bulk)",
+                    "2016.05.10 Management of MV WOORI STAR (Bulk)"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2018",
+                "events": [
+                    "2018.02.10 Management of MV AURORA (High Speed craft)",
+                    "2018.03.01 Open Yangon Branch Office"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2020",
+                "events": [
+                    "2020.07.10 Management of MV WOORI SKY (Bulk)"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2021",
+                "events": [
+                    "2021.03.03 Management of MV WOORI SUN (Bulk)",
+                    "2021.09.19 Open Busan Branch Office"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2022",
+                "events": [
+                    "2022.02.07 Management of MV MAPLE MARINA (Bulk)",
+                    "2022.06.27 Management of MT STO AZALEA / MT STO CAMELLIA",
+                    "MT STO LOBELIA (Chemicals)"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2023",
+                "events": [
+                    "2023.07.03 Management of MV HS GLORY (Bulk)",
+                    "2023.08.15 Management of PS EASTERN DREAM (Car ferry)",
+                    "MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER",
+                    "MV SUN RIO (Ro-Ro ship)"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2024",
+                "events": [
+                    "2024.01.01 Management of PS EASTERN VENUS (Cruise)",
+                    "2024.12.15 Management of MV ORIENTAL FRONTIER (Bulk)"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2025",
+                "events": [
+                    "2025.02.07 Management of MV ORIENTAL ENTERPRISE (Bulk)"
+                ],
+                "align": "left"
+            }
+        ],
+        "ceo": "CEO",
+        "vice_president": "VICE PRESIDENT",
+        "executive_director": "EXECUTIVE DIRECTOR",
+        "duty_director": "DUTY DIRECTOR",
+        "safety_director": "SAFETY MANAGEMENT TEAM DIRECTOR",
+        "marine_technical_director": "MARINE TECHNICAL TEAM DIRECTOR",
+        "marine_technical_manager": "MARINE TECHNICAL TEAM MANAGER",
+        "marine_affair_manager": "MARINE AFFAIR MANAGER",
+        "busan_office": "BUSAN Head Office",
+        "busan_desc": "Crew affairs ship, Marine Technical, Safety management",
+        "yangon_branch": "Yangon Branch",
+        "yangon_desc": "Manage Myanmar Crews, Development Training Course and materials",
+        "rightship_marketing": "Right Ship Marketing (Seoul)"
+    },
+    "services": {
+        "crew_management": "Crew Management",
+        "ship_management": "Ship Management",
+        "repair_supply": "Managing of Repair / Supply of Ship's Part and Store",
+        "new_building": "New Building Supervising",
+        "certifications": "Status of System Certifications"
+    },
+    "fleet": {
+        "title": "Our Fleet",
+        "subtitle": "Explore our diverse fleet of bulk carriers and passenger vessels",
+        "bulk": "Bulk Carriers",
+        "passenger": "Passenger & Ro-Ro",
+        "total_vessels": "Total Vessels",
+        "total_dwt": "Total DWT"
+    },
+    "contact": {
+        "title": "Get in Touch",
+        "head_office": "Head Office",
+        "tel_no": "Tel No",
+        "email": "Email",
+        "name": "Name",
+        "message": "Message",
+        "submit": "Submit",
+        "seoul_office": "Seoul Office",
+        "yangon_office": "Yangon Office",
+        "busan_office": "Head Office (Busan)"
+    },
+    "footer": {
+        "sungan_shipping": "SUNGAN SHIPPING",
+        "best_partner": "Your trusted partner in global maritime logistics.",
+        "services": "Services",
+        "company": "Company",
+        "address": "Address",
+        "all_rights": "All rights reserved."
+    }
+}

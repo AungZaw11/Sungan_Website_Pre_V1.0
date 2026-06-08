@@ -7,6 +7,7 @@ import {
   FaGlobe, FaLinkedin, FaFacebook, FaTwitter
 } from 'react-icons/fa';
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

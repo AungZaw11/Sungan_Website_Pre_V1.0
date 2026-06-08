@@ -1,0 +1,178 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "会社概要",
+        "services": "サービス",
+        "fleet": "船隊",
+        "contact": "お問い合わせ"
+    },
+    "home": {
+        "title": "グローバル海運ソリューション",
+        "subtitle": "会社設立の目的は、船舶管理のトータルソリューションサービスを提供することです。",
+        "get_quote": "見積もりを取得",
+        "learn_more": "詳細を見る",
+        "sungan_is": "SUNGANとは",
+        "description": "海運業界で10年の経験を持つ会社として、即応性と優れた洞察力を持ってお客様に最高のサービスを提供します。お客様との共栄を目指しています。",
+        "mission_vision": "私たちの使命とビジョン",
+        "philosophy": "会社の理念",
+        "foundation": "基盤の構築",
+        "foundation_desc": "船舶管理会社の基盤",
+        "common_goal": "共通目標の達成",
+        "common_goal_desc": "お客様との相互促進を通じて共通の目標を達成します。",
+        "profit": "顧客利益の創出",
+        "profit_desc": "継続的な開発を通じて顧客の利益を創出します。",
+        "affiliated": "関連会社",
+        "our_services": "サービス内容",
+        "services_desc": "お客様のニーズに合わせた総合海運ソリューション",
+        "crew_management": "乗組員管理",
+        "ship_management": "船舶管理",
+        "repair_supply": "船舶部品の修理・供給",
+        "new_building": "新造船監理",
+        "contact_us": "お問い合わせ",
+        "reach_out_text": "包括的な船舶管理サービスについては、チームまでお問い合わせください。"
+    },
+    "about": {
+        "title": "人間中心の組織と安全システムの構築に全力を尽くします。",
+        "para1": "三方を海に囲まれた韓国は、海事産業への参入を目指す海洋人材を育成してきました。",
+        "para2": "しかし、経済成長と国民所得の継続的な増加に伴い、韓国の海事産業は競争力を弱め、乗組員が不足しています。特に、優秀な海洋技術者も海事産業を離れています。",
+        "para3": "SUNGAN SHIPPINGは、厳しい労働環境にもかかわらず、韓国の海洋管理が自分のキャリアにやりがいを感じられる基盤を築きました。",
+        "para4": "\"船舶管理事業\"の定義は、船主からの委託により、船舶の修理、配船、安全運航、保険、乗組員管理の責任とリスクを引き受けることです。したがって、基盤は船主からの信頼と船舶に関する専門知識です。",
+        "para5": "SUNGAN SHIPPING Co., Ltd.は、特にバルクキャリア、RO-RO船、旅客船の専門知識を蓄積してきました。同社は船主から高い評価と信頼を得ており、従業員は特殊船の管理に誇りを持っています。",
+        "para6": "過去を振り返り、未来を計画することによる企業の究極の目標。",
+        "banner_text1": "SUNGAN SHIPPING Co., Ltd.は、安全と環境保護の方針としてISM CODEに準拠して事業を体系的に改善し、人間中心の組織と安全システムを将来に向けて構築するよう努めています。",
+        "banner_text2": "当社は、船主と顧客に安全な運航と労働環境を提供します。",
+        "area_of_focus": "重点分野",
+        "area_of_focus_subtitle": "当社は、船主と顧客に安全な運航と労働環境を提供します。",
+        "focus1": "効率的な品質管理により、お客様に安全な運航と海洋汚染の防止、船舶と資産の管理・維持を提供します。",
+        "focus2": "熟練した韓国人乗組員とミャンマー人乗組員の混合チームの利点を活用して、お客様に最適な運航パフォーマンスとコスト効率の達成をサポートします。",
+        "focus3": "船舶の最高の安全運航を維持するために、再乗船率を実施し、乗組員の訓練を強化します。",
+        "focus4": "お客様のニーズに合わせた優れたスキルを持つ経験豊富な乗組員を提供します。",
+        "history": "沿革",
+        "organization": "組織図",
+        "human_resource": "人材資源",
+        "technology": "技術提供サービス（キーパーソン）",
+        "history_data": [
+            {
+                "year": "2015",
+                "events": [
+                    "2015.12.15 設立"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2016",
+                "events": [
+                    "2016.02.01 事業開始",
+                    "MV MAGIC ORIENT (バルク) 管理",
+                    "2016.05.10 MV WOORI STAR (バルク) 管理"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2018",
+                "events": [
+                    "2018.02.10 MV AURORA (高速船) 管理",
+                    "2018.03.01 ヤンゴン支店開設"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2020",
+                "events": [
+                    "2020.07.10 MV WOORI SKY (バルク) 管理"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2021",
+                "events": [
+                    "2021.03.03 MV WOORI SUN (バルク) 管理",
+                    "2021.09.19 釜山支店開設"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2022",
+                "events": [
+                    "2022.02.07 MV MAPLE MARINA (バルク) 管理",
+                    "2022.06.27 MT STO AZALEA / MT STO CAMELLIA 管理",
+                    "MT STO LOBELIA (化学品)"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2023",
+                "events": [
+                    "2023.07.03 MV HS GLORY (バルク) 管理",
+                    "2023.08.15 PS EASTERN DREAM (カーフェリー) 管理",
+                    "MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER",
+                    "MV SUN RIO (RO-RO船)"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2024",
+                "events": [
+                    "2024.01.01 PS EASTERN VENUS (クルーズ) 管理",
+                    "2024.12.15 MV ORIENTAL FRONTIER (バルク) 管理"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2025",
+                "events": [
+                    "2025.02.07 MV ORIENTAL ENTERPRISE (バルク) 管理"
+                ],
+                "align": "left"
+            }
+        ],
+        "ceo": "最高経営責任者",
+        "vice_president": "副社長",
+        "executive_director": "執行役員",
+        "duty_director": "担当ディレクター",
+        "safety_director": "安全管理チームディレクター",
+        "marine_technical_director": "海事技術チームディレクター",
+        "marine_technical_manager": "海事技術チームマネージャー",
+        "marine_affair_manager": "海事業務マネージャー",
+        "busan_office": "釜山本社",
+        "busan_desc": "乗組員業務、海事技術、安全管理",
+        "yangon_branch": "ヤンゴン支店",
+        "yangon_desc": "ミャンマー人乗組員の管理、研修コースの開発と教材作成",
+        "rightship_marketing": "ライトシップマーケティング（ソウル）"
+    },
+    "services": {
+        "crew_management": "乗組員管理",
+        "ship_management": "船舶管理",
+        "repair_supply": "船舶部品の修理・供給管理",
+        "new_building": "新造船監理",
+        "certifications": "認証状況"
+    },
+    "fleet": {
+        "title": "船隊",
+        "subtitle": "ばら積み船と旅客船の多様な船隊をご覧ください",
+        "bulk": "ばら積み船",
+        "passenger": "旅客船・RO-RO船",
+        "total_vessels": "総隻数",
+        "total_dwt": "総載貨重量"
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "head_office": "本社",
+        "tel_no": "電話番号",
+        "email": "メールアドレス",
+        "name": "お名前",
+        "message": "メッセージ",
+        "submit": "送信",
+        "seoul_office": "ソウル事務所",
+        "yangon_office": "ヤンゴン事務所",
+        "busan_office": "本社（釜山）"
+    },
+    "footer": {
+        "sungan_shipping": "SUNGAN SHIPPING",
+        "best_partner": "グローバル海事物流における信頼できるパートナー",
+        "services": "サービス",
+        "company": "会社情報",
+        "address": "住所",
+        "all_rights": "無断転載を禁じます。"
+    }
+}

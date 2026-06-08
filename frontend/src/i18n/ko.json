@@ -1,0 +1,178 @@
+{
+    "nav": {
+        "home": "홈",
+        "about": "회사소개",
+        "services": "서비스",
+        "fleet": "선대",
+        "contact": "문의하기"
+    },
+    "home": {
+        "title": "글로벌 해운 솔루션",
+        "subtitle": "회사 설립의 목적은 선박 관리의 토탈 솔루션 서비스를 제공하는 것입니다.",
+        "get_quote": "견적 요청",
+        "learn_more": "자세히 보기",
+        "sungan_is": "선간은",
+        "description": "해운 업계에서 10년의 경험을 가진 회사로서, 신속한 대응과 뛰어난 식견으로 고객께 최상의 서비스를 제공합니다. 고객과 함께 성장하는 것을 추구합니다.",
+        "mission_vision": "미션 & 비전",
+        "philosophy": "회사 철학",
+        "foundation": "기반 구축",
+        "foundation_desc": "선박 관리 회사의 기반",
+        "common_goal": "공동 목표 달성",
+        "common_goal_desc": "고객과의 상호 협력을 통해 공동 목표를 달성합니다.",
+        "profit": "고객 수익 창출",
+        "profit_desc": "지속적인 개발을 통한 고객 수익 창출",
+        "affiliated": "관계사",
+        "our_services": "서비스",
+        "services_desc": "고객의 필요에 맞는 종합 해운 솔루션",
+        "crew_management": "승무원 관리",
+        "ship_management": "선박 관리",
+        "repair_supply": "선박 부품 수리/공급",
+        "new_building": "신조 감리",
+        "contact_us": "문의하기",
+        "reach_out_text": "포괄적인 선박 관리 서비스에 대해 팀에 문의하세요."
+    },
+    "about": {
+        "title": "인간 중심의 조직과 안전 시스템 구축에 최선을 다하겠습니다.",
+        "para1": "삼면이 바다로 둘러싸인 한국은 해운 산업에 진출하려는 해양 인력을 양성해 왔습니다.",
+        "para2": "그러나 경제 성장과 국민 소득의 지속적인 증가로 한국의 해운 산업은 경쟁력이 약화되고 승무원이 부족합니다. 특히 우수한 해양 기술자들도 해운 산업을 떠나고 있습니다.",
+        "para3": "SUNGAN SHIPPING은 열악한 근무 환경에도 불구하고 한국의 해운 관리가 자신의 경력에 동기부여를 느낄 수 있는 기반을 마련했습니다.",
+        "para4": "\"선박 관리 사업\"의 정의는 선주로부터 위탁 요청을 통해 선박의 수리, 배분, 안전 운항, 보험 및 승무원 관리의 책임과 위험을 인수하는 것입니다. 따라서 기초는 선주의 신뢰와 선박에 대한 전문 지식입니다.",
+        "para5": "SUNGAN SHIPPING Co., Ltd.는 특히 벌크선, RO-RO선 및 여객선에 대한 전문성을 축적해 왔습니다. 이 회사는 선주들로부터 높은 평가와 신뢰를 얻었으며 직원들은 특수 선박 관리에 자부심을 가지고 있습니다.",
+        "para6": "과거를 반성하고 미래를 계획함으로써 기업의 궁극적인 목표.",
+        "banner_text1": "SUNGAN SHIPPING Co., Ltd.는 안전 및 환경 보호 정책으로 ISM CODE에 따라 사업을 체계적으로 개선하고 미래를 향해 인간 중심의 조직과 안전 시스템을 만들기 위해 노력하고 있습니다.",
+        "banner_text2": "회사는 선주와 고객에게 안전한 운영과 작업 환경을 제공할 것입니다.",
+        "area_of_focus": "중점 분야",
+        "area_of_focus_subtitle": "회사는 선주와 고객에게 안전한 운영과 작업 환경을 제공할 것입니다.",
+        "focus1": "효율적인 품질 관리를 통해 고객에게 안전한 운영과 해양 오염 방지는 물론 선박과 자산의 관리 및 유지보수를 제공합니다.",
+        "focus2": "숙련된 한국인 승무원과 미얀마인 승무원의 혼합 팀의 장점을 활용하여 고객에게 최적의 운영 성능과 비용 효율성을 달성할 수 있도록 지원합니다.",
+        "focus3": "선박의 최상의 안전 운항을 유지하기 위해 재승선율을 시행하고 승무원 교육을 강화합니다.",
+        "focus4": "고객의 필요에 맞는 좋은 기술을 갖춘 경험 많은 승무원을 제공합니다.",
+        "history": "연혁",
+        "organization": "조직도",
+        "human_resource": "인적 자원",
+        "technology": "기술 제공 서비스 (핵심 인력)",
+        "history_data": [
+            {
+                "year": "2015",
+                "events": [
+                    "2015.12.15 설립"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2016",
+                "events": [
+                    "2016.02.01 사업 시작",
+                    "MV MAGIC ORIENT (벌크) 관리",
+                    "2016.05.10 MV WOORI STAR (벌크) 관리"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2018",
+                "events": [
+                    "2018.02.10 MV AURORA (고속선) 관리",
+                    "2018.03.01 양곤 지점 개설"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2020",
+                "events": [
+                    "2020.07.10 MV WOORI SKY (벌크) 관리"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2021",
+                "events": [
+                    "2021.03.03 MV WOORI SUN (벌크) 관리",
+                    "2021.09.19 부산 지점 개설"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2022",
+                "events": [
+                    "2022.02.07 MV MAPLE MARINA (벌크) 관리",
+                    "2022.06.27 MT STO AZALEA / MT STO CAMELLIA 관리",
+                    "MT STO LOBELIA (화학물질)"
+                ],
+                "align": "right"
+            },
+            {
+                "year": "2023",
+                "events": [
+                    "2023.07.03 MV HS GLORY (벌크) 관리",
+                    "2023.08.15 PS EASTERN DREAM (카페리) 관리",
+                    "MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER",
+                    "MV SUN RIO (Ro-Ro선)"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2024",
+                "events": [
+                    "2024.01.01 PS EASTERN VENUS (크루즈) 관리",
+                    "2024.12.15 MV ORIENTAL FRONTIER (벌크) 관리"
+                ],
+                "align": "left"
+            },
+            {
+                "year": "2025",
+                "events": [
+                    "2025.02.07 MV ORIENTAL ENTERPRISE (벌크) 관리"
+                ],
+                "align": "left"
+            }
+        ],
+        "ceo": "대표이사",
+        "vice_president": "부사장",
+        "executive_director": "전무이사",
+        "duty_director": "상무이사",
+        "safety_director": "안전관리팀 이사",
+        "marine_technical_director": "해사기술팀 이사",
+        "marine_technical_manager": "해사기술팀 매니저",
+        "marine_affair_manager": "해사업무 매니저",
+        "busan_office": "부산 본사",
+        "busan_desc": "승무원 업무, 해사 기술, 안전 관리",
+        "yangon_branch": "양곤 지점",
+        "yangon_desc": "미얀마 승무원 관리, 교육 과정 개발 및 자료 제작",
+        "rightship_marketing": "라이트십 마케팅 (서울)"
+    },
+    "services": {
+        "crew_management": "승무원 관리",
+        "ship_management": "선박 관리",
+        "repair_supply": "선박 부품 수리/공급 관리",
+        "new_building": "신조 감리",
+        "certifications": "인증 현황"
+    },
+    "fleet": {
+        "title": "선대 현황",
+        "subtitle": "벌크선과 여객선의 다양한 선대를 만나보세요",
+        "bulk": "벌크선",
+        "passenger": "여객선 & Ro-Ro",
+        "total_vessels": "총 척수",
+        "total_dwt": "총 DWT"
+    },
+    "contact": {
+        "title": "문의하기",
+        "head_office": "본사",
+        "tel_no": "전화번호",
+        "email": "이메일",
+        "name": "이름",
+        "message": "메시지",
+        "submit": "보내기",
+        "seoul_office": "서울 사무소",
+        "yangon_office": "양곤 사무소",
+        "busan_office": "본사 (부산)"
+    },
+    "footer": {
+        "sungan_shipping": "선간 쉬핑",
+        "best_partner": "글로벌 해운 물류의 신뢰할 수 있는 파트너",
+        "services": "서비스",
+        "company": "회사",
+        "address": "주소",
+        "all_rights": "판권 소유."
+    }
+}

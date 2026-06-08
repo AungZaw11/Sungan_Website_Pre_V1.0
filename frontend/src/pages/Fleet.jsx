@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ShipCard from '../components/ShipCard';
 import { bulkFleet, passengerFleet } from '../data/fleetData';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

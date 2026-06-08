@@ -7,6 +7,7 @@ import Pdf1 from '../pdf/1.pdf';
 import Pdf2 from '../pdf/2.pdf';
 import Pdf3 from '../pdf/3.pdf';
 import Pdf4 from '../pdf/4.pdf';
+import { useTranslation } from 'react-i18next';
 
 
 const fadeIn = {
@@ -20,26 +21,26 @@ export default function Services() {
   const [selectedPdf, setSelectedPdf] = useState(null);
 
   const certifications = [
-    { 
-      title: 'Certification of Company under ISM CODE', 
+    {
+      title: 'Certification of Company under ISM CODE',
       desc: 'Certification that it is a company entrusted with the establishment and implementation of the safety management system for the shipowner.',
       pdf: Pdf1,
       fileName: 'ISM_CODE_Certification.pdf'
     },
-    { 
-      title: 'DOC', 
+    {
+      title: 'DOC',
       desc: "Certification that the shipping company's safety management system complies with the requirements of the International Management CODE for the safety operation of ship's and for pollution prevention.",
       pdf: Pdf2,
       fileName: 'DOC_Certificate.pdf'
     },
-    { 
-      title: 'ISSC', 
+    {
+      title: 'ISSC',
       desc: 'This certificate, it proves that there are no violations related to ship security activities and prevents disadvantages such as refusal of entry or suspension of departure.',
       pdf: Pdf3,
       fileName: 'ISSC_Certificate.pdf'
     },
-    { 
-      title: 'Safety Management Certificate', 
+    {
+      title: 'Safety Management Certificate',
       desc: 'Additional safety certification ensuring comprehensive compliance with international maritime safety standards and environmental protection regulations.',
       pdf: Pdf4,
       fileName: 'Safety_Certificate.pdf'
@@ -157,7 +158,7 @@ export default function Services() {
                 </div>
                 <h4 className="text-lg font-semibold text-body mb-3">{cert.title}</h4>
                 <p className="text-body text-sm">{cert.desc}</p>
-                <button 
+                <button
                   className="mt-4 text-primary text-sm font-medium hover:underline flex items-center gap-1"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -181,20 +182,20 @@ export default function Services() {
 
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="flex-1 grid grid-cols-2 gap-4">
-              <img 
-                src="https://images.unsplash.com/photo-1504222490345-c075b6008014?q=80&w=800&auto=format&fit=crop" 
-                alt="Repair 1" 
-                className="rounded-xl shadow-md w-full h-48 object-cover" 
+              <img
+                src="https://images.unsplash.com/photo-1504222490345-c075b6008014?q=80&w=800&auto=format&fit=crop"
+                alt="Repair 1"
+                className="rounded-xl shadow-md w-full h-48 object-cover"
               />
-              <img 
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop" 
-                alt="Repair 2" 
-                className="rounded-xl shadow-md w-full h-48 object-cover" 
+              <img
+                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop"
+                alt="Repair 2"
+                className="rounded-xl shadow-md w-full h-48 object-cover"
               />
-              <img 
-                src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop" 
-                alt="Repair 3" 
-                className="rounded-xl shadow-md w-full h-48 object-cover col-span-2" 
+              <img
+                src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop"
+                alt="Repair 3"
+                className="rounded-xl shadow-md w-full h-48 object-cover col-span-2"
               />
             </div>
             <div className="flex-1 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
@@ -208,93 +209,93 @@ export default function Services() {
       </section>
 
       {/* New Building Supervising */}
-<section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
-  <div className="max-w-7xl mx-auto">
-    <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold mb-16 text-primary text-center">
-      New Building Supervising
-    </motion.h2>
+      <section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold mb-16 text-primary text-center">
+            New Building Supervising
+          </motion.h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {[
-        { 
-          title: 'Review Specification', 
-          desc: '• Review specifications of similar ship types\n• Identify problems of delivered ships', 
-          icon: FaFileAlt 
-        },
-        { 
-          title: 'Prereview for Maker Approval', 
-          desc: '• Decision of Maker to secure safe operation and easy maintenance', 
-          icon: FaCheckCircle 
-        },
-        { 
-          title: 'Review Drawings and Approval', 
-          desc: '• Review shipyard drawings by checking construction specifications and classification rules\n• Classification of approved drawings, etc.', 
-          icon: FaWrench 
-        },
-        { 
-          title: 'Supervising Site', 
-          desc: '• Hull inspection\n• Electrical inspection\n• Identify nonconformity\n• Management supervision of corrective measures, etc.', 
-          icon: FaBuilding 
-        },
-        { 
-          title: 'Crew Management', 
-          desc: '• Support for work related to ship supply', 
-          icon: FaUsers 
-        },
-        { 
-          title: 'Sea Trial', 
-          desc: '• Ensuring ship building as intended\n• Attend the sea trial and supervise', 
-          icon: FaCompass 
-        },
-        { 
-          title: 'Receiving Supplies and Certificates', 
-          desc: '• Acquisition of legal equipment provided by shipyard\n• Receiving certificates provided by shipyard\n• Support loading ship supplies', 
-          icon: FaFileAlt 
-        },
-        { 
-          title: 'Close Meeting and Departure', 
-          desc: '• Identification of Extras & Credits\n• Completing the procedures\n• Reporting vessel departure and results', 
-          icon: FaShip 
-        }
-      ].map((step, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-primary/20 group"
-        >
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-lg font-bold text-primary group-hover:text-primary/80 transition-colors">
-              {step.title}
-            </h3>
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-              <step.icon className="w-5 h-5 text-primary" />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Review Specification',
+                desc: '• Review specifications of similar ship types\n• Identify problems of delivered ships',
+                icon: FaFileAlt
+              },
+              {
+                title: 'Prereview for Maker Approval',
+                desc: '• Decision of Maker to secure safe operation and easy maintenance',
+                icon: FaCheckCircle
+              },
+              {
+                title: 'Review Drawings and Approval',
+                desc: '• Review shipyard drawings by checking construction specifications and classification rules\n• Classification of approved drawings, etc.',
+                icon: FaWrench
+              },
+              {
+                title: 'Supervising Site',
+                desc: '• Hull inspection\n• Electrical inspection\n• Identify nonconformity\n• Management supervision of corrective measures, etc.',
+                icon: FaBuilding
+              },
+              {
+                title: 'Crew Management',
+                desc: '• Support for work related to ship supply',
+                icon: FaUsers
+              },
+              {
+                title: 'Sea Trial',
+                desc: '• Ensuring ship building as intended\n• Attend the sea trial and supervise',
+                icon: FaCompass
+              },
+              {
+                title: 'Receiving Supplies and Certificates',
+                desc: '• Acquisition of legal equipment provided by shipyard\n• Receiving certificates provided by shipyard\n• Support loading ship supplies',
+                icon: FaFileAlt
+              },
+              {
+                title: 'Close Meeting and Departure',
+                desc: '• Identification of Extras & Credits\n• Completing the procedures\n• Reporting vessel departure and results',
+                icon: FaShip
+              }
+            ].map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-primary/20 group"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-lg font-bold text-primary group-hover:text-primary/80 transition-colors">
+                    {step.title}
+                  </h3>
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <step.icon className="w-5 h-5 text-primary" />
+                  </div>
+                </div>
+                <p className="text-body whitespace-pre-line text-sm leading-relaxed">
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
-          <p className="text-body whitespace-pre-line text-sm leading-relaxed">
-            {step.desc}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* PDF Modal */}
       {selectedPdf && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
           onClick={() => setSelectedPdf(null)}
         >
-          <div 
+          <div
             className="relative bg-white rounded-2xl w-full max-w-4xl h-[85vh] overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center p-4 border-b bg-gray-50">
               <h3 className="font-semibold text-primary">Certificate Document</h3>
-              <button 
+              <button
                 onClick={() => setSelectedPdf(null)}
                 className="p-2 hover:bg-gray-200 rounded-full transition-colors"
               >

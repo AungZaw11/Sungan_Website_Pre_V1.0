@@ -1,6 +1,8 @@
+// src/pages/About.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { useTranslation } from 'react-i18next';
+import AboutHeroImg from '../images/Section.png';
 import AboutBannerImg from '../images/Home_2.jpg';
 import AboutFocusImg from '../images/Area of Focus 1.png';
 
@@ -12,6 +14,8 @@ const fadeIn = {
 };
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -20,10 +24,10 @@ export default function About() {
           {...fadeIn}
           className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight max-w-5xl text-primary"
         >
-          We are committed to do our best to create a human-oriented organization and safety system.
+          {t('about.title')}
         </motion.h1>
 
-        <div className="items-center mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -31,25 +35,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="space-y-6 text-body text-lg leading-relaxed"
           >
-            <p>
-              Surrounded on its other three sides by water, South Korea has been fostering marine workforce aiming to enter maritime.
-            </p>
-            <p>
-              With continued increase in economic growth and national income, however, Korea's marine industry is weakening competitiveness and lack of crew. Particularly, excellent marine technicians are also deserting the marine industry.
-            </p>
-            <p>
-              SUNGAN SHIPPING has paved a foundation for Korea's marine management to feel motivated about their career despite its harsh working environment.
-            </p>
-            <p>
-              The definition of "Ship Management Business" is taking over liability and risk of repair, distribution, safety operation, insurance, and crew management of ships through consignment request from ship owners. The foundation, therefore, is confidence from ship owners and professional knowledge about ships.
-            </p>
-            <p>
-              SUNGAN SHIPPING Co., Ltd. has accumulated expertise particularly in BULK carrier and RO-RO CARRIER & PASSENGER ship. The company has earned great evaluation and confidence from ship owners and thus, employees are proud of management of special ships.
-            </p>
-            
-            <p>
-              The finest goal of an enterprise through reflecting on the past and planning for the future.
-            </p>
+            <p>{t('about.para1')}</p>
+            <p>{t('about.para2')}</p>
+            <p>{t('about.para3')}</p>
+            <p>{t('about.para4')}</p>
+            <p>{t('about.para5')}</p>
+            <p>{t('about.para6')}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -57,7 +48,11 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-           
+            <img
+              src={AboutHeroImg}
+              alt="Ship at sea"
+              className="rounded-2xl shadow-2xl object-cover h-[500px] w-full"
+            />
           </motion.div>
         </div>
       </section>
@@ -68,16 +63,11 @@ export default function About() {
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${AboutBannerImg})` }}
         />
-        <div
-          className="absolute inset-0 z-10 bg-primary/85"
-        />
+        <div className="absolute inset-0 z-10 bg-primary/85" />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl md:text-2xl text-white font-medium max-w-5xl mx-auto ">
-            
-              SUNGAN SHIPPING Co., Ltd. improves its business systematically in accordance with ISM CODE as the policy for safety and environmental protection and is committed to endeavor to create human-oriented organizations and safety systems to a future.
-        <br></br>
-            
-            The company will provide safety operation and work environment to ship owners and clients.
+          <p className="text-xl md:text-2xl text-white font-medium max-w-5xl mx-auto leading-relaxed">
+            {t('about.banner_text1')}<br /><br />
+            {t('about.banner_text2')}
           </p>
         </div>
       </section>
@@ -86,10 +76,10 @@ export default function About() {
       <section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-7xl mx-auto">
           <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold text-center mb-12 text-primary">
-            Area of Focus
+            {t('about.area_of_focus')}
           </motion.h2>
           <motion.p {...fadeIn} className="text-center text-body text-lg max-w-4xl mx-auto mb-16">
-            The company will provide safety operation and work environment to ship owners and clients.
+            {t('about.area_of_focus_subtitle')}
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -116,24 +106,16 @@ export default function About() {
               className="space-y-6"
             >
               <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
-                <p className="text-body leading-relaxed">
-                  We provide our clients safe operation and prevention of marine pollution as well as management and maintenance of their ships and asset with efficient quality management.
-                </p>
+                <p className="text-body leading-relaxed">{t('about.focus1')}</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
-                <p className="text-body leading-relaxed">
-                  We support to achieve optimal operational performance and cost efficiency for our clients by utilizing the advantages of a mix of skilled Korean crews and Myanmar crews.
-                </p>
+                <p className="text-body leading-relaxed">{t('about.focus2')}</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
-                <p className="text-body leading-relaxed">
-                  In order to maintain the vessel's best safe operation, we implement a re-joining rate and strengthen training for crews.
-                </p>
+                <p className="text-body leading-relaxed">{t('about.focus3')}</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
-                <p className="text-body leading-relaxed">
-                  We provide experienced crews with good skills for clients needs.
-                </p>
+                <p className="text-body leading-relaxed">{t('about.focus4')}</p>
               </div>
             </motion.div>
           </div>
@@ -141,56 +123,42 @@ export default function About() {
       </section>
 
       {/* History & To Do */}
-     <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-  <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold text-center mb-20 text-primary">
-    History & To Do
-  </motion.h2>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold text-center mb-20 text-primary">
+          {t('about.history')}
+        </motion.h2>
 
-  <div className="relative max-w-5xl mx-auto">
-    {/* Vertical center line - hidden on mobile */}
-    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/30" />
+        <div className="relative max-w-5xl mx-auto">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/30" />
 
-    <div className="space-y-12">
-      {[
-        { year: '2015', events: ['2015.12.15 Establishment'], align: 'left' },
-        { year: '2016', events: ['2016.02.01 Business Start', 'Management of MV MAGIC ORIENT (Bulk)', '2016.05.10 Management of MV WOORI STAR (Bulk)'], align: 'left' },
-        { year: '2018', events: ['2018.02.10 Management of MV AURORA (High Speed craft)', '2018.03.01 Open Yangon Branch Office'], align: 'left' },
-        { year: '2020', events: ['2020.07.10 Management of MV WOORI SKY (Bulk)'], align: 'right' },
-        { year: '2021', events: ['2021.03.03 Management of MV WOORI SUN (Bulk)', '2021.09.19 Open Busan Branch Office'], align: 'right' },
-        { year: '2022', events: ['2022.02.07 Management of MV MAPLE MARINA (Bulk)', '2022.06.27 Management of MT STO AZALEA / MT STO CAMELLIA', 'MT STO LOBELIA (Chemicals)'], align: 'right' },
-        { year: '2023', events: ['2023.07.03 Management of MV HS GLORY (Bulk)', '2023.08.15 Management of PS EASTERN DREAM (Car ferry)', 'MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER', 'MV SUN RIO (Ro-Ro ship)'], align: 'left' },
-        { year: '2024', events: ['2024.01.01 Management of PS EASTERN VENUS (Cruise)', '2024.12.15 Management of MV ORIENTAL FRONTIER (Bulk)'], align: 'left' },
-        { year: '2025', events: ['2025.02.07 Management of MV ORIENTAL ENTERPRISE (Bulk)'], align: 'left' }
-      ].map((item, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.05 }}
-          className={`flex flex-col md:flex-row gap-8 ${item.align === 'right' ? 'md:flex-row-reverse' : ''}`}
-        >
-          <div className={`md:w-1/2 flex ${item.align === 'right' ? 'md:justify-start' : 'md:justify-end'}`}>
-            <div className={`flex flex-col gap-4 max-w-md ${item.align === 'right' ? 'md:pl-12' : 'md:pr-12'}`}>
-              {/* Year Badge */}
-              <div className="inline-flex items-center justify-center px-6 py-2 text-white rounded-full w-fit text-lg font-medium bg-primary shadow-md">
-                {item.year}
-              </div>
-              {/* Events List */}
-              <div className="text-body space-y-2">
-                {item.events.map((event, j) => (
-                  <p key={j} className="text-lg leading-relaxed">{event}</p>
-                ))}
-              </div>
-            </div>
+          <div className="space-y-12">
+            {t('about.history_data', { returnObjects: true }).map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className={`flex flex-col md:flex-row gap-8 ${item.align === 'right' ? 'md:flex-row-reverse' : ''}`}
+              >
+                <div className={`md:w-1/2 flex ${item.align === 'right' ? 'md:justify-start' : 'md:justify-end'}`}>
+                  <div className={`flex flex-col gap-4 max-w-md ${item.align === 'right' ? 'md:pl-12' : 'md:pr-12'}`}>
+                    <div className="inline-flex items-center justify-center px-6 py-2 text-white rounded-full w-fit text-lg font-medium bg-primary shadow-md">
+                      {item.year}
+                    </div>
+                    <div className="text-body space-y-2">
+                      {item.events.map((event, j) => (
+                        <p key={j} className="text-lg leading-relaxed">{event}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden md:block md:w-1/2" />
+              </motion.div>
+            ))}
           </div>
-          {/* Empty spacer for right side when left aligned */}
-          <div className="hidden md:block md:w-1/2" />
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Organization Chart */}
       <section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
@@ -199,7 +167,7 @@ export default function About() {
             {...fadeIn}
             className="text-4xl md:text-5xl font-semibold text-center mb-16 text-primary"
           >
-            Organization Chart
+            {t('about.organization')}
           </motion.h2>
 
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 overflow-x-auto">
@@ -209,7 +177,7 @@ export default function About() {
                 {/* CEO */}
                 <div className="text-center">
                   <div className="w-28 h-28 rounded-full bg-primary flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <span className="text-white text-2xl font-bold">CEO</span>
+                    <span className="text-white text-2xl font-bold">{t('about.ceo')}</span>
                   </div>
                   <div className="font-bold text-primary text-lg">A-SUNG JEON</div>
                   <div className="text-sm text-body">+82-10-9873-9250</div>
@@ -221,7 +189,7 @@ export default function About() {
                 {/* VICE PRESIDENT */}
                 <div className="text-center">
                   <div className="w-28 h-28 rounded-full bg-primary/80 flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <span className="text-white text-xl font-bold">VICE<br />PRESIDENT</span>
+                    <span className="text-white text-xl font-bold">{t('about.vice_president')}</span>
                   </div>
                   <div className="font-bold text-primary text-lg">HWA-BAE KIM</div>
                   <div className="text-sm text-body">+82-10-4696-9490</div>
@@ -238,7 +206,7 @@ export default function About() {
               <div className="flex justify-center mb-12">
                 <div className="text-center">
                   <div className="w-32 h-32 rounded-full bg-primary/60 flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <span className="text-white text-base font-bold text-center px-2">EXECUTIVE<br />DIRECTOR</span>
+                    <span className="text-white text-base font-bold text-center px-2">{t('about.executive_director')}</span>
                   </div>
                   <div className="font-bold text-primary text-lg">YONG-CHAN AN</div>
                   <div className="text-sm text-body">+82-10-7284-4363</div>
@@ -254,19 +222,19 @@ export default function About() {
               {/* Three Columns */}
               <div className="grid grid-cols-3 gap-6 mt-8 text-center">
                 <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">DUTY DIRECTOR</div>
+                  <div className="font-bold text-primary mb-2">{t('about.duty_director')}</div>
                   <div className="font-semibold">JAE-YOUNG JEONG</div>
                   <div className="text-sm">+82-10-2019-3288</div>
                   <div className="text-sm">mtt@sungan.kr</div>
                 </div>
                 <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">SAFETY MANAGEMENT<br />TEAM DIRECTOR</div>
+                  <div className="font-bold text-primary mb-2">{t('about.safety_director')}</div>
                   <div className="font-semibold">SE-HYUN GO</div>
                   <div className="text-sm">+82-10-5437-9943</div>
                   <div className="text-sm">sit@sungan.kr</div>
                 </div>
                 <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">MARINE TECHNICAL<br />TEAM DIRECTOR</div>
+                  <div className="font-bold text-primary mb-2">{t('about.marine_technical_director')}</div>
                   <div className="font-semibold">SOK-U NAM</div>
                   <div className="text-sm">+82-10-9232-7790</div>
                   <div className="text-sm">mtt_rs@sungan.kr</div>
@@ -276,19 +244,19 @@ export default function About() {
               {/* Second Row of Managers */}
               <div className="grid grid-cols-3 gap-6 mt-6 text-center">
                 <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">MARINE TECHNICAL<br />TEAM MANAGER</div>
+                  <div className="font-bold text-primary mb-2">{t('about.marine_technical_manager')}</div>
                   <div className="font-semibold">IL-KWANG SON</div>
                   <div className="text-sm">+82-10-9195-1555</div>
                   <div className="text-sm">mtt@sungan.kr</div>
                 </div>
                 <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">MARINE AFFAIR MANAGER</div>
+                  <div className="font-bold text-primary mb-2">{t('about.marine_affair_manager')}</div>
                   <div className="font-semibold">SEONG-HUN CHOO</div>
                   <div className="text-sm">+82-10-9850-9983</div>
                   <div className="text-sm">mat@sungan.kr</div>
                 </div>
                 <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">MARINE AFFAIR MANAGER</div>
+                  <div className="font-bold text-primary mb-2">{t('about.marine_affair_manager')}</div>
                   <div className="font-semibold">BIN NA KIM</div>
                   <div className="text-sm">+82-10-4632-7588</div>
                   <div className="text-sm">Mtt_rs@sungan.kr</div>
@@ -298,18 +266,18 @@ export default function About() {
               {/* Branch Offices Info */}
               <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-primary/5 p-5 rounded-xl border border-primary/20">
-                  <h4 className="font-bold text-primary mb-3">BUSAN Head Office</h4>
-                  <p className="text-body text-sm">Crew affairs ship, Marine Technical, Safety management</p>
+                  <h4 className="font-bold text-primary mb-3">{t('about.busan_office')}</h4>
+                  <p className="text-body text-sm">{t('about.busan_desc')}</p>
                 </div>
                 <div className="bg-primary/5 p-5 rounded-xl border border-primary/20">
-                  <h4 className="font-bold text-primary mb-3">Yangon Branch</h4>
-                  <p className="text-body text-sm">Manage Myanmar Crews, Development Training Course and materials</p>
+                  <h4 className="font-bold text-primary mb-3">{t('about.yangon_branch')}</h4>
+                  <p className="text-body text-sm">{t('about.yangon_desc')}</p>
                 </div>
               </div>
 
               {/* Rightship Info */}
               <div className="mt-6 bg-primary/5 p-5 rounded-xl border border-primary/20">
-                <h4 className="font-bold text-primary mb-3">Right Ship Marketing (Seoul)</h4>
+                <h4 className="font-bold text-primary mb-3">{t('about.rightship_marketing')}</h4>
                 <p className="text-body text-sm">1 Marine Technical (RIGHTSHIP): Yong Chan An</p>
                 <p className="text-body text-sm">Marketing Manager (Seoul): Hwa bae Kim</p>
               </div>
@@ -322,10 +290,10 @@ export default function About() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold mb-4 text-primary">
-            Human Resource
+            {t('about.human_resource')}
           </motion.h2>
           <motion.p {...fadeIn} className="text-lg text-body">
-            Technology provision services (Key person)
+            {t('about.technology')}
           </motion.p>
         </div>
 
