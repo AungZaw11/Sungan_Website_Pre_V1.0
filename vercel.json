@@ -1,0 +1,15 @@
+{
+  "outputDirectory": "frontend/dist",
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://sungan-website-pre-v1-0.onrender.com/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
