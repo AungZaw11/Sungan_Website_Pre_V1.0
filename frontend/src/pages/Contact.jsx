@@ -67,7 +67,7 @@ export default function Contact() {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://sungan-website-pre-v1-0.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
