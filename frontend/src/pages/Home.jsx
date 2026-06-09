@@ -10,7 +10,12 @@ import HomeHeroImg from '../images/Home.jpg';
 import HomeAboutImg from '../images/Home_2.jpg';
 import MissionVisionImg from '../images/Mission Vision 1.png';
 
-// Import Swiper styles
+import NYKLogo from '../ship_logo/NYK.png';
+import HaesungLogo from '../ship_logo/Haesung.png';
+import DuwonLogo from '../ship_logo/Duwon.png';
+import DuwonShipping from '../ship_logo/Duwon Shipping.png';
+import HongLogo from '../ship_logo/Hong.png';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -26,15 +31,12 @@ export default function Home() {
   const { t } = useTranslation();
 
   const affiliatedCompanies = [
-    { name: 'NYK BULKSHIP (KOREA) CO., LTD.', stat: 'NYK' },
-    { name: 'Haesung Marine CO., LTD.', stat: 'HM' },
-    { name: 'DUWON CRUISE & FERRY CO., LTD.', stat: 'DC' },
-    { name: 'DOWON SHIPPING CO., LTD', stat: 'DS' },
-    { name: 'HONG IK S&T PTE LTD.', stat: 'HI' },
-    { name: 'Woori Shipping Co., Ltd.', stat: 'WS' },
-    { name: 'NTK Group Co., Ltd.', stat: 'NTK' },
-    { name: 'Hengsheng Marine Co., Ltd.', stat: 'HS' },
-  ];
+    { name: 'NYK BULKSHIP (KOREA) CO., LTD.', stat: 'NYK', logo: NYKLogo },
+    { name: 'Haesung Marine CO., LTD.', stat: 'HM', logo: HaesungLogo },
+    { name: 'DUWON CRUISE & FERRY CO., LTD.', stat: 'DC', logo: DuwonLogo },
+    { name: 'DOWON SHIPPING CO., LTD', stat: 'DS', logo: DuwonShipping },
+    { name: 'HONG IK S&T PTE LTD.', stat: 'HI', logo: HongLogo },
+  ]
 
   const services = [
     {
@@ -170,7 +172,7 @@ export default function Home() {
             <img
               src={MissionVisionImg}
               alt="Mission & Vision"
-              className="rounded-2xl shadow-2xl h-[200px] w-full object-cover"
+              className="rounded-2xl shadow-2xl h-[630] w-262px object-cover"
             />
           </motion.div>
 
@@ -254,24 +256,27 @@ export default function Home() {
             }}
             navigation={true}
             breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
             }}
             className="affiliated-swiper"
           >
             {affiliatedCompanies.map((company, i) => (
               <SwiperSlide key={i}>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center text-center gap-4 shadow-lg border border-white/20 hover:bg-white/20 transition-all duration-300 min-h-[250px]">
-                  <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-3xl font-bold text-white">{company.stat}</span>
-                  </div>
+
+                  {company.logo ? (
+                    <img
+                      src={company.logo}
+                      alt={company.name}
+                      className="w-24 h-24 object-contain rounded-full bg-white/20 p-2"
+                    />
+                  ) : (
+                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-3xl font-bold text-white">{company.stat}</span>
+                    </div>
+                  )}
                   <h4 className="font-semibold text-base text-white leading-tight">
                     {company.name}
                   </h4>
