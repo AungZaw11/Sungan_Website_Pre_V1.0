@@ -58,7 +58,7 @@ export const bulkFleet = [
 export const passengerFleet = [
   {
     name: 'EASTERN DREAM (PASSENGER)',
-    type: 'Ro/Ro & Passenger',
+    type: 'Passenger',
     built: '1993',
     gt: '11,478',
     dwt: '3,408',
@@ -68,7 +68,7 @@ export const passengerFleet = [
   },
   {
     name: 'OCEAN LEADER',
-    type: 'Ro/Ro & Passenger',
+    type: ' Passenger',
     built: '2002',
     gt: '9,004',
     dwt: '9,756',
@@ -78,7 +78,7 @@ export const passengerFleet = [
   },
   {
     name: 'SUN STAR',
-    type: 'Ro/Ro & Passenger',
+    type: ' Passenger',
     built: '2000',
     gt: '6,555',
     dwt: '3,294',
@@ -88,7 +88,7 @@ export const passengerFleet = [
   },
   {
     name: 'OCEAN PRIDE1',
-    type: 'Ro/Ro & Passenger',
+    type: ' Passenger',
     built: '1987',
     gt: '6,542',
     dwt: '3,450',
@@ -98,7 +98,7 @@ export const passengerFleet = [
   },
   {
     name: 'SUN RIO',
-    type: 'Ro/Ro & Passenger',
+    type: ' Passenger',
     built: '1991',
     gt: '7,578',
     dwt: '2,577',
@@ -108,7 +108,7 @@ export const passengerFleet = [
   },
   {
     name: 'EASTERN VENUS (PASSENGER, PURE CRUSER)',
-    type: 'Ro/Ro & Passenger',
+    type: 'Passenger',
     built: '1998',
     gt: '26,594',
     dwt: '4,202 MT',

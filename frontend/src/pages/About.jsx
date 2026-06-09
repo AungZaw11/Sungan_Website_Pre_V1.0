@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import AboutHeroImg from '../images/Section.png';
 import AboutBannerImg from '../images/Home_2.jpg';
 import AboutFocusImg from '../images/Area of Focus 1.png';
+import Logo from '../images/logo svg.svg'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -20,12 +21,20 @@ export default function About() {
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <motion.h1
-          {...fadeIn}
-          className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 leading-tight max-w-5xl text-primary"
-        >
-          {t('about.title')}
-        </motion.h1>
+        <div className="flex items-center gap-4 mb-8">
+          <img src={Logo} alt="Ship Icon" className="w-12 h-12 object-contain" />
+          <motion.h1
+            {...fadeIn}
+            className="text-2xl md:text-2xl lg:text-4xl font-semibold leading-tight text-primary"
+          >
+            {t('about.title')}
+          </motion.h1>
+        </div>
+
+
+
+
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
           <motion.div
@@ -334,6 +343,6 @@ export default function About() {
           ))}
         </div>
       </section>
-    </div>
+    </div >
   );
 }

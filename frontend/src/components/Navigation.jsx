@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
-import Logo from '../images/Logo.svg';
+import Logo from '../images/Logo svg.svg';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -24,9 +24,9 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-primary">
-              <img src={Logo} alt="Ship Icon" className="w-6 h-6" />
+          <Link to="/" className="flex items-center gap-1">
+            <div className="p-2 rounded-lg ">
+              <img src={Logo} alt="Ship Icon" className="w-12 h-15" />
             </div>
             <span className="font-bold text-xl text-heading tracking-tight">
               SUNGAN <span className="text-primary">SHIPPING</span>

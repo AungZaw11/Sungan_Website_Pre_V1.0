@@ -8,9 +8,10 @@ import koTranslations from './ko.json';
 
 const resources = {
     en: { translation: enTranslations },
-    ja: { translation: jaTranslations },
-    ko: { translation: koTranslations }
-};
+    ko: { translation: koTranslations },
+    ja: { translation: jaTranslations }
+}
+
 
 i18n
     .use(LanguageDetector)
