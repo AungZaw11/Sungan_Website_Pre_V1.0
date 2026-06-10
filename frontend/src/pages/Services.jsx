@@ -12,6 +12,7 @@ import Pdf1i from '../images/ISM Code 1.png';
 import Pdf2i from '../images/ISM Code 2.png';
 import Pdf3i from '../images/ISM Code 3.png';
 import Pdf4i from '../images/ISM Code 4.png';
+import Logo from '../images/logo.svg'
 
 import ArrangementImg from '../images/Crew.png';
 import TrainingImg from '../images/Training.png';
@@ -25,6 +26,17 @@ const fadeIn = {
   viewport: { once: true },
   transition: { duration: 0.6 }
 };
+
+const SectionHeader = ({ title }) => (
+  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 mb-8">
+    <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">
+      <img src={Logo} alt="Ship Icon" className="w-15 h-15 object-contain" />
+    </div>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-primary text-center sm:text-left leading-tight">
+      {title}
+    </h2>
+  </div>
+);
 
 export default function Services() {
   const { t } = useTranslation();
@@ -61,14 +73,13 @@ export default function Services() {
     }
   ];
 
-
-
   const crewItems = [
     { title: t('services.arrangement'), desc: t('services.arrangement_desc'), image: ArrangementImg },
     { title: t('services.crew_training'), desc: t('services.crew_training_desc'), image: TrainingImg },
     { title: t('services.verification'), desc: t('services.verification_desc'), image: VerificationImg },
     { title: t('services.myship'), desc: t('services.myship_desc'), image: MyshipImg },
   ];
+
   const newBuildingSteps = [
     { title: t('services.review_spec'), desc: t('services.review_spec_desc'), icon: FaFileAlt },
     { title: t('services.prereview'), desc: t('services.prereview_desc'), icon: FaCheckCircle },
@@ -82,16 +93,14 @@ export default function Services() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Crew Management */}
+
+      {/* ========== 1. Crew Management ========== */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <motion.div {...fadeIn} className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-primary">
-            {t('services.crew_management')}
-          </h2>
-          <p className="text-lg text-body max-w-4xl leading-relaxed">
-            {t('services.crew_desc')}
-          </p>
-        </motion.div>
+        <SectionHeader title={t('services.crew_management')} />
+
+        <p className="text-lg text-body max-w-4xl leading-relaxed mb-12">
+          {t('services.crew_desc')}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
           {crewItems.map((item, i) => (
@@ -103,13 +112,8 @@ export default function Services() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white rounded-[14px] p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
             >
-
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6  overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-15 h-15 object-contain"
-                />
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                <img src={item.image} alt={item.title} className="w-15 h-15 object-contain" />
               </div>
               <h3 className="text-xl font-semibold text-body mb-4">{item.title}</h3>
               <p className="text-body whitespace-pre-line">{item.desc}</p>
@@ -138,17 +142,14 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Ship Management */}
+      {/* ========== 2. Ship Management ========== */}
       <section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeIn} className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-primary">
-              {t('services.ship_management')}
-            </h2>
-            <p className="text-lg text-body max-w-4xl leading-relaxed">
-              {t('services.ship_desc')}
-            </p>
-          </motion.div>
+          <SectionHeader title={t('services.ship_management')} />
+
+          <p className="text-lg text-body max-w-4xl leading-relaxed mb-12">
+            {t('services.ship_desc')}
+          </p>
 
           {/* Ship Management Process Image */}
           <div className="mb-24">
@@ -182,13 +183,8 @@ export default function Services() {
                 className="bg-white rounded-[14px] p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-all cursor-pointer"
                 onClick={() => setSelectedPdf(cert.pdf)}
               >
-
                 <div className="w-24 h-32 bg-gray-50 rounded-lg mb-6 flex items-center justify-center border border-gray-200 hover:border-primary/30 transition-colors overflow-hidden">
-                  <img
-                    src={cert.previewImg}
-                    alt={cert.title}
-                    className="w-full h-full object-cover rounded-lg"
-                  />
+                  <img src={cert.previewImg} alt={cert.title} className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <h4 className="text-lg font-semibold text-body mb-3">{cert.title}</h4>
                 <p className="text-body text-sm">{cert.desc}</p>
@@ -207,49 +203,43 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Repair / Supply */}
+      {/* ========== 3. Repair / Supply ========== */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <motion.div {...fadeIn} className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-12 max-w-3xl text-primary">
-            {t('services.repair_supply')}
-          </h2>
+        <SectionHeader title={t('services.repair_supply')} />
 
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="flex-1 grid grid-cols-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1504222490345-c075b6008014?q=80&w=800&auto=format&fit=crop"
-                alt="Repair 1"
-                className="rounded-xl shadow-md w-full h-48 object-cover"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop"
-                alt="Repair 2"
-                className="rounded-xl shadow-md w-full h-48 object-cover"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop"
-                alt="Repair 3"
-                className="rounded-xl shadow-md w-full h-48 object-cover col-span-2"
-              />
-            </div>
-            <div className="flex-1 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <ul className="space-y-6 text-lg text-body list-disc pl-6">
-                <li>{t('services.repair_point1')}</li>
-                <li>{t('services.repair_point2')}</li>
-              </ul>
-            </div>
+        <div className="flex flex-col lg:flex-row gap-12 items-center mt-8">
+          <div className="flex-1 grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1504222490345-c075b6008014?q=80&w=800&auto=format&fit=crop"
+              alt="Repair 1"
+              className="rounded-xl shadow-md w-full h-48 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop"
+              alt="Repair 2"
+              className="rounded-xl shadow-md w-full h-48 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop"
+              alt="Repair 3"
+              className="rounded-xl shadow-md w-full h-48 object-cover col-span-2"
+            />
           </div>
-        </motion.div>
+          <div className="flex-1 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <ul className="space-y-6 text-lg text-body list-disc pl-6">
+              <li>{t('services.repair_point1')}</li>
+              <li>{t('services.repair_point2')}</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      {/* New Building Supervising */}
+      {/* ========== 4. New Building Supervising ========== */}
       <section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-7xl mx-auto">
-          <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold mb-16 text-primary text-center">
-            {t('services.new_building')}
-          </motion.h2>
+          <SectionHeader title={t('services.new_building')} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {newBuildingSteps.map((step, i) => (
               <motion.div
                 key={i}
@@ -263,7 +253,7 @@ export default function Services() {
                   <h3 className="text-lg font-bold text-primary group-hover:text-primary/80 transition-colors">
                     {step.title}
                   </h3>
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <step.icon className="w-5 h-5 text-primary" />
                   </div>
                 </div>
@@ -276,7 +266,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* PDF Modal */}
+      {/* ========== PDF Modal ========== */}
       {selectedPdf && (
         <div
           className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"

@@ -8,6 +8,8 @@ import {
 } from 'react-icons/fa';
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
 
+
+
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -15,7 +17,7 @@ const fadeIn = {
   transition: { duration: 0.6 }
 };
 
-// Office locations with exact coordinates
+
 const officeLocations = [
   {
     id: 1,
