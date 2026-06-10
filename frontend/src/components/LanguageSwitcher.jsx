@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
@@ -16,11 +16,11 @@ export default function LanguageSwitcher() {
     const changeLanguage = (langCode) => {
         i18n.changeLanguage(langCode);
         localStorage.setItem('i18nextLng', langCode);
-        setIsOpen(false); // Close dropdown after selection
+        setIsOpen(false);
     };
 
-    // Close dropdown when clicking outside
-    React.useEffect(() => {
+    // Close dropdown when clicking outside - 
+    useEffect(() => {
         const handleClickOutside = (event) => {
             if (isOpen && !event.target.closest('.language-dropdown')) {
                 setIsOpen(false);
@@ -50,7 +50,7 @@ export default function LanguageSwitcher() {
 
             {/* Dropdown - shows on click (mobile) and hover (desktop) */}
             <div className={`absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 transition-all z-50 
-        ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'}`}>
+                ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'}`}>
                 {languages.map((lang) => (
                     <button
                         key={lang.code}

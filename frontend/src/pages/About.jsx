@@ -6,6 +6,9 @@ import AboutHeroImg from '../images/Section.png';
 import AboutBannerImg from '../images/Home_2.jpg';
 import AboutFocusImg from '../images/Area of Focus 1.png';
 import Logo from '../images/logo.svg'
+import history_1 from '../images/History_1.png';
+import history_2 from '../images/History_2.png';
+import history_3 from '../images/History_3.png';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -30,11 +33,6 @@ export default function About() {
             {t('about.title')}
           </motion.h1>
         </div>
-
-
-
-
-
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
           <motion.div
@@ -137,35 +135,83 @@ export default function About() {
           {t('about.history')}
         </motion.h2>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
+          {/* Vertical center line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/30" />
 
-          <div className="space-y-12">
-            {t('about.history_data', { returnObjects: true }).map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className={`flex flex-col md:flex-row gap-8 ${item.align === 'right' ? 'md:flex-row-reverse' : ''}`}
-              >
-                <div className={`md:w-1/2 flex ${item.align === 'right' ? 'md:justify-start' : 'md:justify-end'}`}>
-                  <div className={`flex flex-col gap-4 max-w-md ${item.align === 'right' ? 'md:pl-12' : 'md:pr-12'}`}>
-                    <div className="inline-flex items-center justify-center px-6 py-2 text-white rounded-full w-fit text-lg font-medium bg-primary shadow-md">
-                      {item.year}
-                    </div>
-                    <div className="text-body space-y-2">
-                      {item.events.map((event, j) => (
-                        <p key={j} className="text-lg leading-relaxed">{event}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="hidden md:block md:w-1/2" />
-              </motion.div>
-            ))}
+          {/* Group 1: 2015 + 2016 + 2018 (Left) | Image (Right) */}
+          <div className="flex flex-col md:flex-row gap-8 mb-16">
+            <div className="md:w-1/2 md:pr-12">
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2015</div>
+                <p className="text-body">2015.12.15 Establishment</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2016</div>
+                <p className="text-body">2016.02.01 Business Start</p>
+                <p className="text-body">Management of MV MAGIC ORIENT (Bulk)</p>
+                <p className="text-body">2016.05.10 Management of MV WOORI STAR (Bulk)</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2018</div>
+                <p className="text-body">2018.02.10 Management of MV AURORA (High Speed craft)</p>
+                <p className="text-body">2018.03.01 Open Yangon Branch Office</p>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <img src={history_1} alt="History" className=" w-full h-[400px] object-cover" />
+            </div>
           </div>
+
+          {/* Group 2: Image (Left) | 2020 + 2021 + 2022 (Right) */}
+          <div className="flex flex-col md:flex-row-reverse gap-8 mb-16">
+            <div className="md:w-1/2 md:pl-12">
+              <div className="bg-white p-6 rounded-xl shadow-md border-r-4 border-primary mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2020</div>
+                <p className="text-body">2020.07.10 Management of MV WOORI SKY (Bulk)</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border-r-4 border-primary mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2021</div>
+                <p className="text-body">2021.03.03 Management of MV WOORI SUN (Bulk)</p>
+                <p className="text-body">2021.09.19 Open Busan Branch Office</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border-r-4 border-primary">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2022</div>
+                <p className="text-body">2022.02.07 Management of MV MAPLE MARINA (Bulk)</p>
+                <p className="text-body">2022.06.27 Management of MT STO AZALEA / MT STO CAMELLIA</p>
+                <p className="text-body">MT STO LOBELIA (Chemicals)</p>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <img src={history_2} alt="History" className=" w-full h-[400px] object-cover" />
+            </div>
+          </div>
+
+          {/* Group 3: 2023 + 2024 + 2025 (Left) | Image (Right) */}
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="md:w-1/2 md:pr-12">
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2023</div>
+                <p className="text-body">2023.07.03 Management of MV HS GLORY (Bulk)</p>
+                <p className="text-body">2023.08.15 Management of PS EASTERN DREAM (Car ferry)</p>
+                <p className="text-body">MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER</p>
+                <p className="text-body">MV SUN RIO (Ro-Ro ship)</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2024</div>
+                <p className="text-body">2024.01.01 Management of PS EASTERN VENUS (Cruise)</p>
+                <p className="text-body">2024.12.15 Management of MV ORIENTAL FRONTIER (Bulk)</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
+                <div className="inline-flex items-center justify-center px-4 py-1 text-white rounded-full text-sm font-medium bg-primary mb-3">2025</div>
+                <p className="text-body">2025.02.07 Management of MV ORIENTAL ENTERPRISE (Bulk)</p>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <img src={history_3} alt="History" className=" w-full h-[400px] object-cover" />
+            </div>
+          </div>
+
         </div>
       </section>
 
