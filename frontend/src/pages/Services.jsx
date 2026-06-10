@@ -8,6 +8,16 @@ import Pdf1 from '../pdf/1.pdf';
 import Pdf2 from '../pdf/2.pdf';
 import Pdf3 from '../pdf/3.pdf';
 import Pdf4 from '../pdf/4.pdf';
+import Pdf1i from '../images/ISM Code 1.png';
+import Pdf2i from '../images/ISM Code 2.png';
+import Pdf3i from '../images/ISM Code 3.png';
+import Pdf4i from '../images/ISM Code 4.png';
+
+import ArrangementImg from '../images/Crew.png';
+import TrainingImg from '../images/Training.png';
+import VerificationImg from '../images/New.png';
+import MyshipImg from '../images/myship.png';
+
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -25,35 +35,40 @@ export default function Services() {
       title: t('services.cert1'),
       desc: t('services.cert1_desc'),
       pdf: Pdf1,
+      previewImg: Pdf1i,
       fileName: 'ISM_CODE_Certification.pdf'
     },
     {
       title: t('services.cert2'),
       desc: t('services.cert2_desc'),
       pdf: Pdf2,
+      previewImg: Pdf2i,
       fileName: 'DOC_Certificate.pdf'
     },
     {
       title: t('services.cert3'),
       desc: t('services.cert3_desc'),
       pdf: Pdf3,
+      previewImg: Pdf3i,
       fileName: 'ISSC_Certificate.pdf'
     },
     {
       title: t('services.cert4'),
       desc: t('services.cert4_desc'),
       pdf: Pdf4,
+      previewImg: Pdf4i,
       fileName: 'Safety_Certificate.pdf'
     }
   ];
 
-  const crewItems = [
-    { title: t('services.arrangement'), desc: t('services.arrangement_desc'), icon: FaUsers },
-    { title: t('services.crew_training'), desc: t('services.crew_training_desc'), icon: FaFileAlt },
-    { title: t('services.verification'), desc: t('services.verification_desc'), icon: FaCheckCircle },
-    { title: t('services.myship'), desc: t('services.myship_desc'), icon: FaShip }
-  ];
 
+
+  const crewItems = [
+    { title: t('services.arrangement'), desc: t('services.arrangement_desc'), image: ArrangementImg },
+    { title: t('services.crew_training'), desc: t('services.crew_training_desc'), image: TrainingImg },
+    { title: t('services.verification'), desc: t('services.verification_desc'), image: VerificationImg },
+    { title: t('services.myship'), desc: t('services.myship_desc'), image: MyshipImg },
+  ];
   const newBuildingSteps = [
     { title: t('services.review_spec'), desc: t('services.review_spec_desc'), icon: FaFileAlt },
     { title: t('services.prereview'), desc: t('services.prereview_desc'), icon: FaCheckCircle },
@@ -88,8 +103,13 @@ export default function Services() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white rounded-[14px] p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
             >
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 bg-primary-light">
-                <item.icon className="w-8 h-8 text-primary" />
+
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6  overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-15 h-15 object-contain"
+                />
               </div>
               <h3 className="text-xl font-semibold text-body mb-4">{item.title}</h3>
               <p className="text-body whitespace-pre-line">{item.desc}</p>
@@ -150,6 +170,7 @@ export default function Services() {
           <h3 className="text-2xl font-semibold mb-12 text-center text-primary">
             {t('services.certifications')}
           </h3>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {certifications.map((cert, i) => (
               <motion.div
@@ -161,8 +182,13 @@ export default function Services() {
                 className="bg-white rounded-[14px] p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-all cursor-pointer"
                 onClick={() => setSelectedPdf(cert.pdf)}
               >
-                <div className="w-24 h-32 bg-red-50 rounded-lg mb-6 flex items-center justify-center border border-red-200 hover:bg-red-100 transition-colors">
-                  <FaFilePdf className="w-12 h-12 text-red-500" />
+
+                <div className="w-24 h-32 bg-gray-50 rounded-lg mb-6 flex items-center justify-center border border-gray-200 hover:border-primary/30 transition-colors overflow-hidden">
+                  <img
+                    src={cert.previewImg}
+                    alt={cert.title}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
                 <h4 className="text-lg font-semibold text-body mb-3">{cert.title}</h4>
                 <p className="text-body text-sm">{cert.desc}</p>

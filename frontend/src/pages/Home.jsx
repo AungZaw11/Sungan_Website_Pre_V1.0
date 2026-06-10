@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FaArrowRight, FaUsers, FaShip, FaWrench, FaBuilding } from 'react-icons/fa';
+import { FaArrowRight, FaUsers, FaShip, FaWrench, FaBuilding, FaAngleRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import HomeHeroImg from '../images/Home.jpg';
@@ -14,7 +14,8 @@ import NYKLogo from '../ship_logo/NYK.png';
 import HaesungLogo from '../ship_logo/Haesung.png';
 import DuwonLogo from '../ship_logo/Duwon.png';
 import DuwonShipping from '../ship_logo/Duwon Shipping.png';
-import HongLogo from '../ship_logo/Hong.png';
+import HongLogo from '../ship_logo/Hongik.png';
+import Woori from '../ship_logo/Woori.png'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -36,6 +37,7 @@ export default function Home() {
     { name: 'DUWON CRUISE & FERRY CO., LTD.', stat: 'DC', logo: DuwonLogo },
     { name: 'DOWON SHIPPING CO., LTD', stat: 'DS', logo: DuwonShipping },
     { name: 'HONG IK S&T PTE LTD.', stat: 'HI', logo: HongLogo },
+    { name: 'Woori Shipping Co., Ltd.', stat: 'WS', logo: Woori }
   ]
 
   const services = [
@@ -124,8 +126,9 @@ export default function Home() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div {...fadeIn}>
+
             <div className="inline-block px-4 py-2 bg-gray-100 rounded-full text-body font-medium mb-6">
-              Date of establishment of the company 2015.12.16
+              {t('home.establishment_date')}
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-primary">
               {t('home.sungan_is')}
@@ -172,7 +175,7 @@ export default function Home() {
             <img
               src={MissionVisionImg}
               alt="Mission & Vision"
-              className="rounded-2xl shadow-2xl  object-cover"
+              className=" p-2 rounded-2xl   object-cover"
             />
           </motion.div>
 
@@ -186,7 +189,10 @@ export default function Home() {
           >
             {/* Title */}
             <div>
+
+
               <h2 className="text-4xl md:text-5xl font-semibold text-primary mb-2">
+
                 {t('home.mission_vision')}
               </h2>
               <p className="text-lg text-primary font-medium">{t('home.philosophy')}</p>
@@ -194,9 +200,13 @@ export default function Home() {
 
             {/* Cards */}
             <div className="space-y-6">
-              {/* Card 1 */}
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold text-primary mb-2">{t('home.foundation')}</h3>
+                <div className="flex items-center gap-2 mb-2">
+                  <FaAngleRight className="w-5 h-5 text-primary" />
+                  <h3 className="text-xl font-bold text-primary">
+                    {t('home.foundation')}
+                  </h3>
+                </div>
                 <p className="text-body">
                   {t('home.foundation_desc')}
                 </p>
@@ -204,7 +214,12 @@ export default function Home() {
 
               {/* Card 2 */}
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold text-primary mb-2">{t('home.common_goal')}</h3>
+                <div className="flex items-center gap-2 mb-2">
+                  <FaAngleRight className="w-5 h-5 text-primary" />
+                  <h3 className="text-xl font-bold text-primary mb-2">
+
+                    {t('home.common_goal')}</h3>
+                </div>
                 <p className="text-body">
                   {t('home.common_goal_desc')}
                 </p>
@@ -212,7 +227,10 @@ export default function Home() {
 
               {/* Card 3 */}
               <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold text-primary mb-2">{t('home.profit')}</h3>
+                <div className="flex items-center gap-2 mb-2">
+                  <FaAngleRight className="w-5 h-5 text-primary" />
+                  <h3 className="text-xl font-bold text-primary mb-2">{t('home.profit')}</h3>
+                </div>
                 <p className="text-body">
                   {t('home.profit_desc')}
                 </p>
@@ -266,14 +284,17 @@ export default function Home() {
               <SwiperSlide key={i}>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center text-center gap-4 shadow-lg border border-white/20 hover:bg-white/20 transition-all duration-300 min-h-[250px]">
 
+                  {/* Rectangle Frame - No longer circle */}
                   {company.logo ? (
-                    <img
-                      src={company.logo}
-                      alt={company.name}
-                      className="w-24 h-24 object-contain rounded-full bg-white/20 p-2"
-                    />
+                    <div className="w-28 h-28 bg-white/20 rounded-xl flex items-center justify-center p-3 border border-white/30">
+                      <img
+                        src={company.logo}
+                        alt={company.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                   ) : (
-                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+                    <div className="w-28 h-28 bg-white/20 rounded-xl flex items-center justify-center border border-white/30">
                       <span className="text-3xl font-bold text-white">{company.stat}</span>
                     </div>
                   )}

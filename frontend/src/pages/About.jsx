@@ -9,6 +9,7 @@ import Logo from '../images/logo.svg'
 import history_1 from '../images/History_1.png';
 import history_2 from '../images/History_2.png';
 import history_3 from '../images/History_3.png';
+import CEO from '../images/chart.png';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -225,119 +226,22 @@ export default function About() {
             {t('about.organization')}
           </motion.h2>
 
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 overflow-x-auto">
-            <div className="min-w-[800px]">
-              {/* Top Row: CEO and VICE PRESIDENT side by side */}
-              <div className="flex justify-center items-center gap-16 mb-16">
-                {/* CEO */}
-                <div className="text-center">
-                  <div className="w-28 h-28 rounded-full bg-primary flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <span className="text-white text-2xl font-bold">{t('about.ceo')}</span>
-                  </div>
-                  <div className="font-bold text-primary text-lg">A-SUNG JEON</div>
-                  <div className="text-sm text-body">+82-10-9873-9250</div>
-                  <div className="text-sm text-body">biz@sungan.kr</div>
-                </div>
 
-                <div className="text-4xl text-primary">→</div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-12 flex justify-center"
+          >
+            <img
+              src={CEO}
+              alt="Organization Chart"
+              className="w-full max-w-4xl h-auto object-contain rounded-2xl shadow-lg border border-gray-100"
+            />
+          </motion.div>
 
-                {/* VICE PRESIDENT */}
-                <div className="text-center">
-                  <div className="w-28 h-28 rounded-full bg-primary/80 flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <span className="text-white text-xl font-bold">{t('about.vice_president')}</span>
-                  </div>
-                  <div className="font-bold text-primary text-lg">HWA-BAE KIM</div>
-                  <div className="text-sm text-body">+82-10-4696-9490</div>
-                  <div className="text-sm text-body">smd@sungan.kr</div>
-                </div>
-              </div>
 
-              {/* Connecting line down */}
-              <div className="flex justify-center">
-                <div className="w-px h-12 bg-primary" />
-              </div>
-
-              {/* EXECUTIVE DIRECTOR */}
-              <div className="flex justify-center mb-12">
-                <div className="text-center">
-                  <div className="w-32 h-32 rounded-full bg-primary/60 flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <span className="text-white text-base font-bold text-center px-2">{t('about.executive_director')}</span>
-                  </div>
-                  <div className="font-bold text-primary text-lg">YONG-CHAN AN</div>
-                  <div className="text-sm text-body">+82-10-7284-4363</div>
-                  <div className="text-sm text-body">biz@sungan.kr</div>
-                </div>
-              </div>
-
-              {/* Horizontal line connecting three columns */}
-              <div className="flex justify-center">
-                <div className="w-[600px] h-px bg-primary" />
-              </div>
-
-              {/* Three Columns */}
-              <div className="grid grid-cols-3 gap-6 mt-8 text-center">
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">{t('about.duty_director')}</div>
-                  <div className="font-semibold">JAE-YOUNG JEONG</div>
-                  <div className="text-sm">+82-10-2019-3288</div>
-                  <div className="text-sm">mtt@sungan.kr</div>
-                </div>
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">{t('about.safety_director')}</div>
-                  <div className="font-semibold">SE-HYUN GO</div>
-                  <div className="text-sm">+82-10-5437-9943</div>
-                  <div className="text-sm">sit@sungan.kr</div>
-                </div>
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">{t('about.marine_technical_director')}</div>
-                  <div className="font-semibold">SOK-U NAM</div>
-                  <div className="text-sm">+82-10-9232-7790</div>
-                  <div className="text-sm">mtt_rs@sungan.kr</div>
-                </div>
-              </div>
-
-              {/* Second Row of Managers */}
-              <div className="grid grid-cols-3 gap-6 mt-6 text-center">
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">{t('about.marine_technical_manager')}</div>
-                  <div className="font-semibold">IL-KWANG SON</div>
-                  <div className="text-sm">+82-10-9195-1555</div>
-                  <div className="text-sm">mtt@sungan.kr</div>
-                </div>
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">{t('about.marine_affair_manager')}</div>
-                  <div className="font-semibold">SEONG-HUN CHOO</div>
-                  <div className="text-sm">+82-10-9850-9983</div>
-                  <div className="text-sm">mat@sungan.kr</div>
-                </div>
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <div className="font-bold text-primary mb-2">{t('about.marine_affair_manager')}</div>
-                  <div className="font-semibold">BIN NA KIM</div>
-                  <div className="text-sm">+82-10-4632-7588</div>
-                  <div className="text-sm">Mtt_rs@sungan.kr</div>
-                </div>
-              </div>
-
-              {/* Branch Offices Info */}
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-primary/5 p-5 rounded-xl border border-primary/20">
-                  <h4 className="font-bold text-primary mb-3">{t('about.busan_office')}</h4>
-                  <p className="text-body text-sm">{t('about.busan_desc')}</p>
-                </div>
-                <div className="bg-primary/5 p-5 rounded-xl border border-primary/20">
-                  <h4 className="font-bold text-primary mb-3">{t('about.yangon_branch')}</h4>
-                  <p className="text-body text-sm">{t('about.yangon_desc')}</p>
-                </div>
-              </div>
-
-              {/* Rightship Info */}
-              <div className="mt-6 bg-primary/5 p-5 rounded-xl border border-primary/20">
-                <h4 className="font-bold text-primary mb-3">{t('about.rightship_marketing')}</h4>
-                <p className="text-body text-sm">1 Marine Technical (RIGHTSHIP): Yong Chan An</p>
-                <p className="text-body text-sm">Marketing Manager (Seoul): Hwa bae Kim</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
