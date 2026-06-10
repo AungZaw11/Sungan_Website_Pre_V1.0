@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import AboutHeroImg from '../images/Section.png';
 import AboutBannerImg from '../images/Home_2.jpg';
 import AboutFocusImg from '../images/Area of Focus 1.png';
-import Logo from '../images/logo svg.svg'
+import Logo from '../images/logo.svg'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ShipCard from '../components/ShipCard';
 import { bulkFleet, passengerFleet } from '../data/fleetData';
-import Logo from '../images/Logo svg.svg'
+import Logo from '../images/logo.svg'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

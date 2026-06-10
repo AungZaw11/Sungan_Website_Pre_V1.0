@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobe } from 'react-icons/fa';
 
 export default function LanguageSwitcher() {
     const { i18n } = useTranslation();
     const currentLanguage = i18n.language;
+    const [isOpen, setIsOpen] = useState(false);
 
     const languages = [
         { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -15,20 +16,41 @@ export default function LanguageSwitcher() {
     const changeLanguage = (langCode) => {
         i18n.changeLanguage(langCode);
         localStorage.setItem('i18nextLng', langCode);
+        setIsOpen(false); // Close dropdown after selection
     };
 
+    // Close dropdown when clicking outside
+    React.useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isOpen && !event.target.closest('.language-dropdown')) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [isOpen]);
+
     return (
-        <div className="relative group">
-            <button className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <div className="relative language-dropdown">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
                 <FaGlobe className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">
+                <span className="text-sm font-medium hidden sm:inline">
                     {languages.find(l => l.code === currentLanguage)?.flag}
                     {' '}
                     {languages.find(l => l.code === currentLanguage)?.name}
                 </span>
+                {/* Mobile: show only flag */}
+                <span className="text-sm font-medium sm:hidden">
+                    {languages.find(l => l.code === currentLanguage)?.flag}
+                </span>
             </button>
 
-            <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            {/* Dropdown - shows on click (mobile) and hover (desktop) */}
+            <div className={`absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 transition-all z-50 
+        ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'}`}>
                 {languages.map((lang) => (
                     <button
                         key={lang.code}

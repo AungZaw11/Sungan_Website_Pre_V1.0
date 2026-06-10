@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
-import Logo from '../images/Logo svg.svg';
+import Logo from '../images/logo.svg';
 
 export default function Navigation() {
   const { t } = useTranslation();

@@ -172,7 +172,7 @@ export default function Home() {
             <img
               src={MissionVisionImg}
               alt="Mission & Vision"
-              className="rounded-2xl shadow-2xl h-[630] w-262px object-cover"
+              className="rounded-2xl shadow-2xl  object-cover"
             />
           </motion.div>
 

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaShip } from 'react-icons/fa';
-import Logo from '../images/logo svg.svg';
+import Logo from '../images/logo.svg';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
