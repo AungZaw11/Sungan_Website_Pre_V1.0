@@ -73,7 +73,7 @@ export default function About() {
         />
         <div className="absolute inset-0 z-10 bg-primary/85" />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl md:text-2xl text-white font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white font-medium max-w-7xl mx-auto leading-relaxed">
             {t('about.banner_text1')}<br /><br />
             {t('about.banner_text2')}
           </p>

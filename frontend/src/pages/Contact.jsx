@@ -4,11 +4,21 @@ import { useTranslation } from 'react-i18next';
 import {
   FaBuilding, FaPhone, FaEnvelope, FaCheckCircle,
   FaExclamationCircle, FaMapMarkerAlt, FaClock,
-  FaGlobe, FaLinkedin, FaFacebook, FaTwitter
+  FaGlobe
 } from 'react-icons/fa';
 import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
+import Logo from '../images/logo.svg';
 
-
+const SectionHeader = ({ title }) => (
+  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 mb-8">
+    <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">
+      <img src={Logo} alt="Ship Icon" className="w-15 h-15 object-contain" />
+    </div>
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary text-center sm:text-left leading-tight">
+      {title}
+    </h1>
+  </div>
+);
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -16,7 +26,6 @@ const fadeIn = {
   viewport: { once: true },
   transition: { duration: 0.6 }
 };
-
 
 const officeLocations = [
   {
@@ -106,6 +115,10 @@ export default function Contact() {
     <div className="flex flex-col w-full bg-surface min-h-screen">
       {/* Contact Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+
+        {/* Logo + Title */}
+        <SectionHeader title={t('contact.title')} />
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info & Offices */}
           <motion.div
@@ -114,7 +127,6 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-6">{t('contact.title')}</h2>
             <p className="text-body mb-10">
               {t('contact.description')}
             </p>
