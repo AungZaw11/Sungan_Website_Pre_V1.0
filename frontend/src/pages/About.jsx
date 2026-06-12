@@ -10,12 +10,24 @@ import history_1 from '../images/History_1.png';
 import history_2 from '../images/History_2.png';
 import history_3 from '../images/History_3.png';
 import CEO from '../images/chart.png';
+import Top from '../images/Chart_top.png';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
   transition: { duration: 0.6 }
+};
+const getRightshipTeam = () => {
+  return [
+    { name: "YONG-CHAN AN", role: "Executive Director / 1 Marine Technical" },
+    { name: "SOK-U NAM", role: "Marine Technical Director" },
+    { name: "IL-KWANG SON", role: "Marine Technical Manager" },
+    { name: "SEONG-HUN CHOO", role: "Marine Affair Manager" },
+    { name: "BIN NA KIM", role: "Marine Affair Manager" },
+    { name: "JAE-YOUNG JEONG", role: "Duty Director" },
+    { name: "SE-HYUN GO", role: "Safety Management Director" },
+  ];
 };
 
 export default function About() {
@@ -216,37 +228,244 @@ export default function About() {
         </div>
       </section>
 
-      {/* Organization Chart */}
-      <section className="py-24 bg-surface px-4 sm:px-6 lg:px-8 w-full">
+      {/* ========== ORGANIZATION CHART SECTION ========== */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             {...fadeIn}
-            className="text-4xl md:text-5xl font-semibold text-center mb-16 text-primary"
+            className="text-4xl md:text-5xl font-semibold text-center mb-6 text-primary"
           >
-            {t('about.organization')}
+            {t("about.organization") || "Organization Chart"}
           </motion.h2>
+          <motion.p
+            {...fadeIn}
+            className="text-center text-body text-lg max-w-3xl mx-auto mb-16"
+          >
+            Our organizational structure showing leadership hierarchy and departmental divisions
+          </motion.p>
 
-          {/* ✅ Organization Chart Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-12 flex justify-center"
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 overflow-x-auto"
           >
-            <img
-              src={CEO}
-              alt="Organization Chart"
-              className="w-full max-w-4xl h-auto object-contain rounded-2xl shadow-lg border border-gray-100"
-            />
+            <div className="min-w-[900px]">
+
+              {/* ===== CEO ROW ===== */}
+              <div className="flex justify-center mb-4">
+                <div className="relative">
+                  <div className="rounded-2xl p-4 w-64 text-center">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-lg">
+                      <img
+                        src={Top}
+                        alt="CEO"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="font-bold text-xl text-primary">CEO</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Connector Line */}
+              <div className="flex justify-center mb-4">
+                <div className="w-0.5 h-8 bg-primary/30"></div>
+              </div>
+
+              {/* ===== VP ROW ===== */}
+              <div className="flex justify-center mb-12">
+                <div className="rounded-2xl p-4 w-64 text-center">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-lg">
+                    <img
+                      src={Top}
+                      alt="DP"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="font-bold text-xl text-primary">DP</div>
+                </div>
+              </div>
+
+              {/* Branch Connector Lines */}
+              <div className="relative flex justify-center mb-8">
+                <div className="absolute top-0 w-[750px] h-0.5 bg-primary/20"></div>
+                <div className="absolute -top-8 left-1/2 w-0.5 h-8 bg-primary/20"></div>
+                <div className="absolute  left-[calc(50%-375px)] w-0.5 h-8 bg-primary/20"></div>
+                <div className="absolute  right-[calc(50%-375px)] w-0.5 h-8 bg-primary/20"></div>
+              </div>
+
+              {/* ===== THREE MAIN BRANCHES ===== */}
+              <div className="grid grid-cols-3 gap-6 mb-12">
+
+                {/* Branch 1: Rightship Marketing with Departments */}
+                <div className="relative">
+                  <div className="rounded-xl p-5 text-center">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-md">
+                      <img
+                        src={Top}
+                        alt="RightShip Marketing"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="font-bold text-primary text-base">Right Ship Marketing</h3>
+                    <p className="text-sm text-gray-500">(Seoul Office)</p>
+                  </div>
+
+                  {/* Vertical line from branch to departments */}
+                  <div className="flex justify-center mt-2">
+                    <div className="w-0.5 h-4 bg-primary/40"></div>
+                  </div>
+
+                  {/* Horizontal line connector */}
+                  <div className="relative flex justify-center my-2">
+                    <div className="w-[180px] h-0.5 bg-primary/40"></div>
+                  </div>
+
+                  {/* Vertical lines down to each department */}
+                  <div className="relative mt-2">
+                    {/* Main vertical line */}
+                    <div className="absolute left-1/2 top-0 w-0.5 h-[calc(100%-20px)] bg-primary/40 -translate-x-1/2"></div>
+
+                    {/* Departments under RightShip Marketing */}
+                    <div className="mt-4 space-y-3 relative z-10">
+                      <div className="font-semibold text-primary text-xs mb-2 text-center">Departments:</div>
+                      <div className="grid grid-cols-1 gap-3">
+                        {[
+                          "Crew Affairs Ship Agency",
+                          "Marine Technical",
+                          "Safety Management",
+                          "Account"
+                        ].map((dept, idx) => (
+                          <div key={idx} className="relative">
+                            {/* Horizontal connector line for each department */}
+                            <div className="absolute -top-3 left-1/2 w-4 h-3 border-l border-b border-primary/40 -translate-x-1/2"></div>
+                            <div className="bg-blue-50 rounded-lg p-2 text-sm border border-blue-200 hover:shadow-md transition hover:border-blue-300">
+                              <div className="font-medium text-primary text-center text-xs">{dept}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Branch 2: Yangon Branch with Departments */}
+                <div className="relative">
+                  <div className="rounded-xl p-5 text-center">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-md">
+                      <img
+                        src={Top}
+                        alt="Yangon Branch"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="font-bold text-green-700 text-base">Yangon Branch</h3>
+                    <p className="text-sm text-gray-500">(Myanmar)</p>
+                  </div>
+
+                  {/* Vertical line from branch to departments */}
+                  <div className="flex justify-center mt-2">
+                    <div className="w-0.5 h-4 bg-green-700/40"></div>
+                  </div>
+
+                  {/* Horizontal line connector */}
+                  <div className="relative flex justify-center my-2">
+                    <div className="w-[180px] h-0.5 bg-green-700/40"></div>
+                  </div>
+
+                  {/* Vertical lines down to each department */}
+                  <div className="relative mt-2">
+                    <div className="absolute left-1/2 top-0 w-0.5 h-[calc(100%-20px)] bg-green-700/40 -translate-x-1/2"></div>
+
+                    <div className="mt-4 space-y-3 relative z-10">
+                      <div className="font-semibold text-green-700 text-xs mb-2 text-center">Departments:</div>
+                      <div className="grid grid-cols-1 gap-3">
+                        {[
+                          "1 Marine Technical (Rightship)",
+                          "Sales"
+                        ].map((dept, idx) => (
+                          <div key={idx} className="relative">
+                            <div className="absolute -top-3 left-1/2 w-4 h-3 border-l border-b border-green-700/40 -translate-x-1/2"></div>
+                            <div className="bg-green-50 rounded-lg p-2 text-sm border border-green-200 hover:shadow-md transition hover:border-green-300">
+                              <div className="font-medium text-green-700 text-center text-xs">{dept}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Branch 3: Crew Affairs with Departments */}
+                <div className="relative">
+                  <div className="rounded-xl p-5 text-center">
+                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-md">
+                      <img
+                        src={Top}
+                        alt="Crew Affairs"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="font-bold text-purple-700 text-base">Crew Affairs</h3>
+                    <p className="text-sm text-gray-500">(Ship Agency)</p>
+                  </div>
+
+                  {/* Vertical line from branch to departments */}
+                  <div className="flex justify-center mt-2">
+                    <div className="w-0.5 h-4 bg-purple-700/40"></div>
+                  </div>
+
+                  {/* Horizontal line connector */}
+                  <div className="relative flex justify-center my-2">
+                    <div className="w-[180px] h-0.5 bg-purple-700/40"></div>
+                  </div>
+
+                  {/* Vertical lines down to each department */}
+                  <div className="relative mt-2">
+                    <div className="absolute left-1/2 top-0 w-0.5 h-[calc(100%-20px)] bg-purple-700/40 -translate-x-1/2"></div>
+
+                    <div className="mt-4 space-y-3 relative z-10">
+                      <div className="font-semibold text-purple-700 text-xs mb-2 text-center">Departments:</div>
+                      <div className="grid grid-cols-1 gap-3">
+                        {[
+                          "Crew Affairs",
+                          "HRD"
+                        ].map((dept, idx) => (
+                          <div key={idx} className="relative">
+                            <div className="absolute -top-3 left-1/2 w-4 h-3 border-l border-b border-purple-700/40 -translate-x-1/2"></div>
+                            <div className="bg-purple-50 rounded-lg p-2 text-sm border border-purple-200 hover:shadow-md transition hover:border-purple-300">
+                              <div className="font-medium text-purple-700 text-center text-xs">{dept}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* ===== BOTTOM INFO CARDS ===== */}
+              <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-200">
+                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                  <div className="font-bold text-primary mb-2">Busan Office</div>
+                  <div className="text-sm text-gray-600">Operational & Technical Support Center</div>
+                  <div className="text-xs text-gray-400 mt-2">📍 Busan, South Korea</div>
+                </div>
+                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                  <div className="font-bold text-primary mb-2">Rightship Marketing</div>
+                  <div className="text-sm text-gray-600">1 Marine Technical: Yong Chan An</div>
+                  <div className="text-xs text-gray-400 mt-2">Marketing Manager: Hwa bae Kim</div>
+                </div>
+              </div>
+
+            </div>
           </motion.div>
-
-
         </div>
       </section>
 
       {/* Human Resource */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      < section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full" >
         <div className="text-center mb-16">
           <motion.h2 {...fadeIn} className="text-4xl md:text-5xl font-semibold mb-4 text-primary">
             {t('about.human_resource')}
@@ -277,8 +496,9 @@ export default function About() {
               className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow"
             >
               <div className="p-6 bg-primary/5 border-b border-primary/10">
+                <p className="font-semibold text-red/80">{person.role}</p>
                 <h3 className="text-xl font-bold mb-1 text-primary">{person.name}</h3>
-                <p className="font-semibold text-primary/80">{person.role}</p>
+
               </div>
               <div className="p-6 flex-grow flex flex-col gap-4">
                 <div className="space-y-1">
@@ -292,7 +512,7 @@ export default function About() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section >
     </div >
   );
 }
