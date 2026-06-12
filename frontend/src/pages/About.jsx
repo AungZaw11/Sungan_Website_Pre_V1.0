@@ -11,7 +11,10 @@ import history_2 from '../images/History_2.png';
 import history_3 from '../images/History_3.png';
 import CEO from '../images/chart.png';
 import Top from '../images/Chart_top.png';
-
+import dp from '../images/DP.png';
+import ss from '../images/Seoul.png';
+import mm from '../images/Myanmar.png';
+import b2 from '../images/Branch2.png';
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -228,18 +231,19 @@ export default function About() {
         </div>
       </section>
 
+
       {/* ========== ORGANIZATION CHART SECTION ========== */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 lg:px-8 w-full">
+      <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             {...fadeIn}
-            className="text-4xl md:text-5xl font-semibold text-center mb-6 text-primary"
+            className="text-2xl md:text-4xl lg:text-5xl font-semibold text-center mb-4 md:mb-6 text-primary"
           >
             {t("about.organization") || "Organization Chart"}
           </motion.h2>
           <motion.p
             {...fadeIn}
-            className="text-center text-body text-lg max-w-3xl mx-auto mb-16"
+            className="text-center text-body text-sm md:text-lg max-w-3xl mx-auto mb-8 md:mb-16 px-4"
           >
             Our organizational structure showing leadership hierarchy and departmental divisions
           </motion.p>
@@ -249,216 +253,266 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 overflow-x-auto"
+            className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 md:p-6 lg:p-10 overflow-x-auto"
           >
-            <div className="min-w-[900px]">
+            {/* Desktop Version (hidden on mobile) */}
+            <div className="hidden lg:block min-w-[900px] relative">
+              {/* ===== ROW 1: CEO + DP ===== */}
+              <div className="relative flex justify-center items-start mb-0 h-[120px]">
+                {/* Horizontal line CEO → DP */}
+                <div className="absolute top-[44px] left-1/2 right-[12%] h-px bg-blue-300" />
 
-              {/* ===== CEO ROW ===== */}
-              <div className="flex justify-center mb-4">
-                <div className="relative">
-                  <div className="rounded-2xl p-4 w-64 text-center">
-                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-lg">
-                      <img
-                        src={Top}
-                        alt="CEO"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="font-bold text-xl text-primary">CEO</div>
+                {/* CEO */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 flex flex-col items-center z-10">
+                  <div className="w-[88px] h-[88px] rounded-full overflow-hidden border-[3px] border-blue-400 shadow-lg ring-4 ring-blue-100">
+                    <img src={Top} alt="CEO" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-5 py-1.5 text-xs font-semibold tracking-wide">
+                    CEO
+                  </div>
+                </div>
+
+                {/* DP */}
+                <div className="absolute right-[12%] top-0 flex flex-col items-center z-10">
+                  <div className="w-[88px] h-[88px] rounded-full overflow-hidden border-[3px] border-blue-400 shadow-lg ring-4 ring-blue-100">
+                    <img src={dp} alt="DP" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-5 py-1.5 text-xs font-semibold tracking-wide">
+                    DP
                   </div>
                 </div>
               </div>
 
-              {/* Connector Line */}
-              <div className="flex justify-center mb-4">
-                <div className="w-0.5 h-8 bg-primary/30"></div>
+              {/* CEO vertical drop */}
+              <div className="flex justify-center">
+                <div className="w-px h-8 bg-blue-300" />
               </div>
 
-              {/* ===== VP ROW ===== */}
-              <div className="flex justify-center mb-12">
-                <div className="rounded-2xl p-4 w-64 text-center">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-lg">
-                    <img
-                      src={Top}
-                      alt="DP"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="font-bold text-xl text-primary">DP</div>
-                </div>
-              </div>
-
-              {/* Branch Connector Lines */}
-              <div className="relative flex justify-center mb-8">
-                <div className="absolute top-0 w-[750px] h-0.5 bg-primary/20"></div>
-                <div className="absolute -top-8 left-1/2 w-0.5 h-8 bg-primary/20"></div>
-                <div className="absolute  left-[calc(50%-375px)] w-0.5 h-8 bg-primary/20"></div>
-                <div className="absolute  right-[calc(50%-375px)] w-0.5 h-8 bg-primary/20"></div>
+              {/* ===== 3-BRANCH SPLITTER ===== */}
+              <div className="relative h-15">
+                <div className="absolute top-0 left-[calc(16.67%+20px)] right-[calc(16.67%+20px)] h-px bg-blue-300" />
+                <div className="absolute top-0 left-[calc(16.67%+20px)] w-px h-8 bg-blue-300" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 bg-blue-300" />
+                <div className="absolute top-0 right-[calc(16.67%+20px)] w-px h-8 bg-blue-300" />
               </div>
 
               {/* ===== THREE MAIN BRANCHES ===== */}
-              <div className="grid grid-cols-3 gap-6 mb-12">
-
-                {/* Branch 1: Rightship Marketing with Departments */}
-                <div className="relative">
-                  <div className="rounded-xl p-5 text-center">
-                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-md">
-                      <img
-                        src={Top}
-                        alt="RightShip Marketing"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="font-bold text-primary text-base">Right Ship Marketing</h3>
-                    <p className="text-sm text-gray-500">(Seoul Office)</p>
+              <div className="grid grid-cols-3 gap-6">
+                {/* Branch 1 */}
+                <div className="flex flex-col items-center gap-0">
+                  <div className="w-[80px] h-[80px] rounded-full overflow-hidden border-[3px] border-blue-400 shadow-md ring-4 ring-blue-100 mb-2">
+                    <img src={ss} alt="Right Ship Marketing" className="w-full h-full object-cover" />
                   </div>
-
-                  {/* Vertical line from branch to departments */}
-                  <div className="flex justify-center mt-2">
-                    <div className="w-0.5 h-4 bg-primary/40"></div>
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Right Ship Marketing (Seoul)
                   </div>
-
-                  {/* Horizontal line connector */}
-                  <div className="relative flex justify-center my-2">
-                    <div className="w-[180px] h-0.5 bg-primary/40"></div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Crew Affairs Ship Agency
                   </div>
-
-                  {/* Vertical lines down to each department */}
-                  <div className="relative mt-2">
-                    {/* Main vertical line */}
-                    <div className="absolute left-1/2 top-0 w-0.5 h-[calc(100%-20px)] bg-primary/40 -translate-x-1/2"></div>
-
-                    {/* Departments under RightShip Marketing */}
-                    <div className="mt-4 space-y-3 relative z-10">
-                      <div className="font-semibold text-primary text-xs mb-2 text-center">Departments:</div>
-                      <div className="grid grid-cols-1 gap-3">
-                        {[
-                          "Crew Affairs Ship Agency",
-                          "Marine Technical",
-                          "Safety Management",
-                          "Account"
-                        ].map((dept, idx) => (
-                          <div key={idx} className="relative">
-                            {/* Horizontal connector line for each department */}
-                            <div className="absolute -top-3 left-1/2 w-4 h-3 border-l border-b border-primary/40 -translate-x-1/2"></div>
-                            <div className="bg-blue-50 rounded-lg p-2 text-sm border border-blue-200 hover:shadow-md transition hover:border-blue-300">
-                              <div className="font-medium text-primary text-center text-xs">{dept}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Marine Technical
+                  </div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Safety Management
+                  </div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Account
                   </div>
                 </div>
 
-                {/* Branch 2: Yangon Branch with Departments */}
-                <div className="relative">
-                  <div className="rounded-xl p-5 text-center">
-                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-md">
-                      <img
-                        src={Top}
-                        alt="Yangon Branch"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="font-bold text-green-700 text-base">Yangon Branch</h3>
-                    <p className="text-sm text-gray-500">(Myanmar)</p>
+                {/* Branch 2 */}
+                <div className="flex flex-col items-center gap-0">
+                  <div className="w-[80px] h-[80px] rounded-full overflow-hidden border-[3px] border-blue-400 shadow-md ring-4 ring-blue-100 mb-2">
+                    <img src={b2} alt="Right Ship Marketing Seoul" className="w-full h-full object-cover" />
                   </div>
-
-                  {/* Vertical line from branch to departments */}
-                  <div className="flex justify-center mt-2">
-                    <div className="w-0.5 h-4 bg-green-700/40"></div>
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Right Ship Marketing (Seoul)
                   </div>
-
-                  {/* Horizontal line connector */}
-                  <div className="relative flex justify-center my-2">
-                    <div className="w-[180px] h-0.5 bg-green-700/40"></div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    1 Marine Technical (Rightship)
                   </div>
-
-                  {/* Vertical lines down to each department */}
-                  <div className="relative mt-2">
-                    <div className="absolute left-1/2 top-0 w-0.5 h-[calc(100%-20px)] bg-green-700/40 -translate-x-1/2"></div>
-
-                    <div className="mt-4 space-y-3 relative z-10">
-                      <div className="font-semibold text-green-700 text-xs mb-2 text-center">Departments:</div>
-                      <div className="grid grid-cols-1 gap-3">
-                        {[
-                          "1 Marine Technical (Rightship)",
-                          "Sales"
-                        ].map((dept, idx) => (
-                          <div key={idx} className="relative">
-                            <div className="absolute -top-3 left-1/2 w-4 h-3 border-l border-b border-green-700/40 -translate-x-1/2"></div>
-                            <div className="bg-green-50 rounded-lg p-2 text-sm border border-green-200 hover:shadow-md transition hover:border-green-300">
-                              <div className="font-medium text-green-700 text-center text-xs">{dept}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Sales
                   </div>
                 </div>
 
-                {/* Branch 3: Crew Affairs with Departments */}
-                <div className="relative">
-                  <div className="rounded-xl p-5 text-center">
-                    <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-3 overflow-hidden shadow-md">
-                      <img
-                        src={Top}
-                        alt="Crew Affairs"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="font-bold text-purple-700 text-base">Crew Affairs</h3>
-                    <p className="text-sm text-gray-500">(Ship Agency)</p>
+                {/* Branch 3 */}
+                <div className="flex flex-col items-center gap-0">
+                  <div className="w-[80px] h-[80px] rounded-full overflow-hidden border-[3px] border-blue-400 shadow-md ring-4 ring-blue-100 mb-2">
+                    <img src={mm} alt="Yangon Branch" className="w-full h-full object-cover" />
                   </div>
-
-                  {/* Vertical line from branch to departments */}
-                  <div className="flex justify-center mt-2">
-                    <div className="w-0.5 h-4 bg-purple-700/40"></div>
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Yangon Branch
                   </div>
-
-                  {/* Horizontal line connector */}
-                  <div className="relative flex justify-center my-2">
-                    <div className="w-[180px] h-0.5 bg-purple-700/40"></div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    Crew Affairs
                   </div>
-
-                  {/* Vertical lines down to each department */}
-                  <div className="relative mt-2">
-                    <div className="absolute left-1/2 top-0 w-0.5 h-[calc(100%-20px)] bg-purple-700/40 -translate-x-1/2"></div>
-
-                    <div className="mt-4 space-y-3 relative z-10">
-                      <div className="font-semibold text-purple-700 text-xs mb-2 text-center">Departments:</div>
-                      <div className="grid grid-cols-1 gap-3">
-                        {[
-                          "Crew Affairs",
-                          "HRD"
-                        ].map((dept, idx) => (
-                          <div key={idx} className="relative">
-                            <div className="absolute -top-3 left-1/2 w-4 h-3 border-l border-b border-purple-700/40 -translate-x-1/2"></div>
-                            <div className="bg-purple-50 rounded-lg p-2 text-sm border border-purple-200 hover:shadow-md transition hover:border-purple-300">
-                              <div className="font-medium text-purple-700 text-center text-xs">{dept}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="w-px h-5 bg-blue-300" />
+                  <div className="bg-[#1a3a6b] text-white rounded-md px-4 py-2 text-xs font-semibold text-center w-full max-w-[180px]">
+                    HRD
                   </div>
                 </div>
               </div>
-              {/* ===== BOTTOM INFO CARDS ===== */}
-              <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-200">
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <div className="font-bold text-primary mb-2">Busan Office</div>
-                  <div className="text-sm text-gray-600">Operational & Technical Support Center</div>
-                  <div className="text-xs text-gray-400 mt-2">📍 Busan, South Korea</div>
+
+              {/* Bottom Info Card */}
+              <div className="flex justify-end mt-10 pt-6">
+                <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm max-w-xs w-full">
+                  <ul className="flex flex-col gap-2">
+                    {[
+                      { label: "D.P.", value: "A-SUNG JEON" },
+                      { label: "BUSAN Head Office", value: "Crew Affairs Ship, Marine Technical, Safety Management" },
+                      { label: "Marketing Manager (Seoul)", value: "Hwa bae Kim" },
+                      { label: "1 Marine Technical (RIGHTSHIP)", value: "Yong Chan An" },
+                      { label: "Yangon Branch scope of work", value: "Manage Myanmar Crews, Development Training Course and materials" },
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-gray-600 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1a3a6b] flex-shrink-0 mt-1.5" />
+                        <span>
+                          <span className="font-semibold text-gray-800">{item.label}:</span>{" "}
+                          {item.value}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <div className="font-bold text-primary mb-2">Rightship Marketing</div>
-                  <div className="text-sm text-gray-600">1 Marine Technical: Yong Chan An</div>
-                  <div className="text-xs text-gray-400 mt-2">Marketing Manager: Hwa bae Kim</div>
+              </div>
+            </div>
+
+            {/* ===== MOBILE & TABLET VERSION (Stacked Layout) ===== */}
+            <div className="lg:hidden">
+              {/* CEO */}
+              <div className="flex flex-col items-center mb-8">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-[3px] border-blue-400 shadow-lg ring-4 ring-blue-100">
+                  <img src={Top} alt="CEO" className="w-full h-full object-cover" />
+                </div>
+                <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-4 py-1.5 text-xs font-semibold">
+                  CEO
                 </div>
               </div>
 
+              {/* Connector */}
+              <div className="flex justify-center mb-4">
+                <div className="w-px h-6 bg-blue-300"></div>
+              </div>
+
+              {/* DP */}
+              <div className="flex flex-col items-center mb-12">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-[3px] border-blue-400 shadow-lg ring-4 ring-blue-100">
+                  <img src={Top} alt="DP" className="w-full h-full object-cover" />
+                </div>
+                <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-4 py-1.5 text-xs font-semibold">
+                  DP
+                </div>
+              </div>
+
+              {/* Branches - Stacked vertically on mobile */}
+              <div className="space-y-8">
+
+                {/* Branch 1 */}
+                <div className="border-t border-blue-200 pt-6">
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-blue-400 shadow-md">
+                      <img src={Top} alt="Branch" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-3 py-1.5 text-xs font-semibold text-center">
+                      Right Ship Marketing (Seoul)
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-2">
+                    <div className="w-px h-4 bg-blue-300"></div>
+                  </div>
+                  <div className="space-y-3 pl-4">
+                    {["Crew Affairs Ship Agency", "Marine Technical", "Safety Management", "Account"].map((dept, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                        <div className="bg-gray-50 rounded-md px-3 py-2 text-xs text-gray-700 flex-1 border border-gray-200">
+                          {dept}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Branch 2 */}
+                <div className="border-t border-blue-200 pt-6">
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-blue-400 shadow-md">
+                      <img src={Top} alt="Branch" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-3 py-1.5 text-xs font-semibold text-center">
+                      Right Ship Marketing (Seoul)
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-2">
+                    <div className="w-px h-4 bg-blue-300"></div>
+                  </div>
+                  <div className="space-y-3 pl-4">
+                    {["1 Marine Technical (Rightship)", "Sales"].map((dept, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                        <div className="bg-gray-50 rounded-md px-3 py-2 text-xs text-gray-700 flex-1 border border-gray-200">
+                          {dept}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Branch 3 */}
+                <div className="border-t border-blue-200 pt-6">
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-blue-400 shadow-md">
+                      <img src={Top} alt="Branch" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="mt-2 bg-[#1a3a6b] text-white rounded-md px-3 py-1.5 text-xs font-semibold text-center">
+                      Yangon Branch
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-2">
+                    <div className="w-px h-4 bg-blue-300"></div>
+                  </div>
+                  <div className="space-y-3 pl-4">
+                    {["Crew Affairs", "HRD"].map((dept, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                        <div className="bg-gray-50 rounded-md px-3 py-2 text-xs text-gray-700 flex-1 border border-gray-200">
+                          {dept}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Info Card - Mobile */}
+              <div className="mt-10 pt-6">
+                <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
+                  <ul className="flex flex-col gap-2">
+                    {[
+                      { label: "D.P.", value: "A-SUNG JEON" },
+                      { label: "BUSAN Head Office", value: "Crew Affairs Ship, Marine Technical, Safety Management" },
+                      { label: "Marketing Manager (Seoul)", value: "Hwa bae Kim" },
+                      { label: "1 Marine Technical (RIGHTSHIP)", value: "Yong Chan An" },
+                      { label: "Yangon Branch scope of work", value: "Manage Myanmar Crews, Development Training Course and materials" },
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-gray-600 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1a3a6b] flex-shrink-0 mt-1.5" />
+                        <span>
+                          <span className="font-semibold text-gray-800">{item.label}:</span>{" "}
+                          {item.value}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
