@@ -31,7 +31,7 @@ const officeLocations = [
   {
     id: 1,
     name: 'Head Office (Busan)',
-    address: '5fl Dong-il Bldg, 12-3, Jungang-daero 180beon-gil, Dong-gu, Busan, South Korea',
+    address: '4th Floor, Dongil Bldg, 12-3 Jungang-daero 180beon-gil, Dong-gu, Busan, Rep. of KOREA',
     phone: '+82-51-462-2227',
     email: 'smd@sungan.kr',
     position: { lat: 35.1296, lng: 129.0396 },
@@ -40,8 +40,8 @@ const officeLocations = [
   },
   {
     id: 2,
-    name: 'Seoul Office',
-    address: 'Seoul, South Korea',
+    name: 'Seoul Branch',
+    address: '2FL. SK BLDG., 157, World Cup-ro, Mapo-gu, Seoul, Rep. of Korea',
     phone: '+82-51-462-2227',
     email: 'smd@sungan.kr',
     position: { lat: 37.5665, lng: 126.9780 },

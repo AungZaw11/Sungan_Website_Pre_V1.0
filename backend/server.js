@@ -98,15 +98,15 @@ app.post('/api/contact', async (req, res) => {
     // Send both emails
     await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(customerMailOptions);
-    
-    res.status(200).json({ 
-      success: true, 
-      message: 'Message sent successfully!' 
+
+    res.status(200).json({
+      success: true,
+      message: 'Message sent successfully!'
     });
   } catch (error) {
     console.error('Email error:', error);
-    res.status(500).json({ 
-      error: 'Failed to send message. Please try again later.' 
+    res.status(500).json({
+      error: 'Failed to send message. Please try again later.'
     });
   }
 });
