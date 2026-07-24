@@ -33,7 +33,7 @@ const officeLocations = [
     name: 'Head Office (Busan)',
     address: '4th Floor, Dongil Bldg, 12-3 Jungang-daero 180beon-gil, Dong-gu, Busan, Rep. of KOREA',
     phone: '+82-51-462-2227',
-    email: 'smd@sungan.kr',
+    email: 'info@sungan.kr',
     position: { lat: 35.1296, lng: 129.0396 },
     color: '#0077BE',
     workingHours: 'Mon-Fri: 9:00 AM - 6:00 PM (KST)'
@@ -43,7 +43,7 @@ const officeLocations = [
     name: 'Seoul Branch',
     address: '2FL. SK BLDG., 157, World Cup-ro, Mapo-gu, Seoul, Rep. of Korea',
     phone: '+82-51-462-2227',
-    email: 'smd@sungan.kr',
+    email: 'info@sungan.kr',
     position: { lat: 37.5665, lng: 126.9780 },
     color: '#dc2626',
     workingHours: 'Mon-Fri: 9:00 AM - 6:00 PM (KST)'
@@ -53,7 +53,7 @@ const officeLocations = [
     name: 'Yangon Office',
     address: 'Yangon, Myanmar',
     phone: '+95-xxx-xxx-xxxx',
-    email: 'smd@sungan.kr',
+    email: 'info@sungan.kr',
     position: { lat: 16.8409, lng: 96.1735 },
     color: '#0077BE',
     workingHours: 'Mon-Fri: 9:00 AM - 5:00 PM (MMT)'
@@ -77,7 +77,9 @@ export default function Contact() {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,19 +92,20 @@ export default function Contact() {
       if (response.ok) {
         setStatus({
           type: 'success',
-          message: t('contact.success_message')
+          message: t('contact.success_message') || 'Your message has been sent successfully! We will get back to you soon.'
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
         setStatus({
           type: 'error',
-          message: data.error || t('contact.error_message')
+          message: data.error || t('contact.error_message') || 'Something went wrong. Please try again.'
         });
       }
     } catch (error) {
+      console.error('Error:', error);
       setStatus({
         type: 'error',
-        message: t('contact.network_error')
+        message: t('contact.network_error') || 'Network error. Please check your connection.'
       });
     } finally {
       setIsLoading(false);
@@ -180,7 +183,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">{t('contact.email')}</p>
-                    <p className="text-body font-medium">smd@sungan.kr</p>
+                    <p className="text-body font-medium">info@sungan.kr</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
