@@ -19,9 +19,7 @@ export default function ShipCard({ ship, index }) {
         />
       </div>
 
-      {/* Ship Info */}
       <div className="p-6 flex-grow">
-        {/* Title + Country in same row */}
         <div className="flex justify-between items-start mb-4">
           <h3 className="text-xl font-semibold text-primary">{ship.name}</h3>
           <div className="flex items-center gap-2">
@@ -30,7 +28,6 @@ export default function ShipCard({ ship, index }) {
           </div>
         </div>
 
-        {/* Ship Details */}
         <div className="space-y-2 text-body text-sm">
           <div className="flex justify-between">
             <span className="text-gray-500">TYPE :</span>

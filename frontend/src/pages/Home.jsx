@@ -15,7 +15,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import HomeHeroImg from "../images/Home.jpg";
 import HomeAboutImg from "../images/Home_2.jpg";
-import MissionVisionImg from "../images/Mission Vision 1.png";
+
+import MissionVisionImgen from "../images/Mission Vision en.png";
+import MissionVisionImgjp from "../images/Mission Vision jp.png";
+import MissionVisionImgkr from "../images/Mission Vision kr.png";
 
 import NYKLogo from "../ship_logo/NYK.png";
 import HaesungLogo from "../ship_logo/Haesung.png";
@@ -36,7 +39,10 @@ const fadeIn = {
 };
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const isKorean = i18n.language === 'ko' || i18n.language === 'kr';
+  const isJapanese = i18n.language === 'ja' || i18n.language === 'jp';
 
   const affiliatedCompanies = [
     { name: "NYK BULKSHIP (KOREA) CO., LTD.", stat: "NYK", logo: NYKLogo },
@@ -51,22 +57,22 @@ export default function Home() {
     {
       icon: FaUsers,
       title: t("home.crew_management"),
-      desc: "SUNGAN Shipping adopts an innovative system and provides a differentiated services based on...",
+      desc: t("home.crew_management_desc"),
     },
     {
       icon: FaShip,
       title: t("home.ship_management"),
-      desc: "SUNGAN Shipping guarantees the reliable management through open communication with...",
+      desc: t("home.ship_management_desc"),
     },
     {
       icon: FaWrench,
       title: t("home.repair_supply"),
-      desc: "Available to supply original ship's spare parts with competitive price",
+      desc: t("home.repair_supply_desc"),
     },
     {
       icon: FaBuilding,
       title: t("home.new_building"),
-      desc: "Comprehensive supervision services for new ship building projects.",
+      desc: t("home.new_building_desc"),
     },
   ];
 
@@ -182,13 +188,12 @@ export default function Home() {
             className="relative"
           >
             <img
-              src={MissionVisionImg}
+              src={isKorean ? MissionVisionImgkr : isJapanese ? MissionVisionImgjp : MissionVisionImgen}
               alt="Mission & Vision"
-              className=" p-2 rounded-2xl   object-cover"
+              className="p-2 rounded-2xl object-cover"
             />
           </motion.div>
 
-          {/* Right Side - Content */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -196,7 +201,6 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            {/* Title */}
             <div>
               <h2 className="text-4xl md:text-5xl font-semibold text-primary mb-2">
                 {t("home.mission_vision")}
@@ -246,13 +250,11 @@ export default function Home() {
 
       {/* Affiliated Companies - Infinite Slider */}
       <section className="py-24 w-full relative overflow-hidden">
-        {/* Background Image */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${HomeAboutImg})` }}
         />
 
-        {/* Dark Overlay */}
         <div className="absolute inset-0 z-10 bg-primary/85" />
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -287,7 +289,7 @@ export default function Home() {
             {affiliatedCompanies.map((company, i) => (
               <SwiperSlide key={i}>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center text-center gap-4 shadow-lg border border-white/20 hover:bg-white/20 transition-all duration-300 min-h-[250px]">
-                  {/* Rectangle Frame - No longer circle */}
+                  {/* Rectangle Frame */}
                   {company.logo ? (
                     <div className="w-28 h-28 bg-white/20 rounded-xl flex items-center justify-center p-3 border border-white/30">
                       <img
@@ -303,8 +305,19 @@ export default function Home() {
                       </span>
                     </div>
                   )}
-                  <h4 className="font-semibold text-base text-white leading-tight">
-                    {company.name}
+
+                  <h4 className="font-semibold text-base text-white leading-tight uppercase">
+                    {company.name.split(/(CO\.,\s*LTD\.?|PTE\s*LTD\.?)/i).map((part, index) => {
+                      if (/(CO\.,\s*LTD\.?|PTE\s*LTD\.?)/i.test(part)) {
+                        return (
+                          <React.Fragment key={index}>
+                            <br />
+                            {part}
+                          </React.Fragment>
+                        );
+                      }
+                      return part;
+                    })}
                   </h4>
                 </div>
               </SwiperSlide>
@@ -313,7 +326,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Services */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <motion.h2

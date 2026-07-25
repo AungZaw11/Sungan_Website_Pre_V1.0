@@ -9,8 +9,8 @@ export default function LanguageSwitcher() {
 
     const languages = [
         { code: 'en', name: 'English', flag: '🇬🇧' },
-        { code: 'ja', name: '日本語', flag: '🇯🇵' },
-        { code: 'ko', name: '한국어', flag: '🇰🇷' }
+        { code: 'ko', name: '한국어', flag: '🇰🇷' },
+        { code: 'ja', name: '日本語', flag: '🇯🇵' }
     ];
 
     const changeLanguage = (langCode) => {
@@ -19,7 +19,6 @@ export default function LanguageSwitcher() {
         setIsOpen(false);
     };
 
-    // Close dropdown when clicking outside - 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (isOpen && !event.target.closest('.language-dropdown')) {
@@ -42,13 +41,11 @@ export default function LanguageSwitcher() {
                     {' '}
                     {languages.find(l => l.code === currentLanguage)?.name}
                 </span>
-                {/* Mobile: show only flag */}
                 <span className="text-sm font-medium sm:hidden">
                     {languages.find(l => l.code === currentLanguage)?.flag}
                 </span>
             </button>
 
-            {/* Dropdown - shows on click (mobile) and hover (desktop) */}
             <div className={`absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-100 transition-all z-50 
                 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible'}`}>
                 {languages.map((lang) => (

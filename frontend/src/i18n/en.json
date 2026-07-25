@@ -7,6 +7,10 @@
     "contact": "Contact"
   },
   "home": {
+    "crew_management_desc": "SUNGAN Shipping adopts an innovative system and provides a differentiated services based on...",
+    "ship_management_desc": "SUNGAN Shipping guarantees the reliable management through open communication with...",
+    "repair_supply_desc": "Available to supply original ship's spare parts with competitive price",
+    "new_building_desc": "Comprehensive supervision services for new ship building projects.",
     "establishmentdate": "SUNGAN, The Beginning of a New Challenge 2015.12.16",
     "title": "Global Shipping Solutions",
     "subtitle": "The purpose of the company's establishment is to provide total solution services for ship management.",
@@ -31,6 +35,27 @@
     "new_building": "New Building Supervision",
     "contact_us": "Contact Us",
     "reach_out_text": "Reach out to our team for comprehensive ship management services."
+  },
+  "history": {
+    "y2015_1": "2015.12.15 Establishment",
+    "y2016_1": "2016.02.01 Business Start",
+    "y2016_2": "Management of MV MAGIC ORIENT (Bulk)",
+    "y2016_3": "2016.05.10 Management of MV WOORI STAR (Bulk)",
+    "y2018_1": "2018.02.10 Management of MV AURORA (High Speed craft)",
+    "y2018_2": "2018.03.01 Open Yangon Branch Office",
+    "y2020_1": "2020.07.10 Management of MV WOORI SKY (Bulk)",
+    "y2021_1": "2021.03.03 Management of MV WOORI SUN (Bulk)",
+    "y2021_2": "2021.09.19 Open Busan Branch Office",
+    "y2022_1": "2022.02.07 Management of MV MAPLE MARINA (Bulk)",
+    "y2022_2": "2022.06.27 Management of MT STO AZALEA / MT STO CAMELLIA",
+    "y2022_3": "MT STO LOBELIA (Chemicals)",
+    "y2023_1": "2023.07.03 Management of MV HS GLORY (Bulk)",
+    "y2023_2": "2023.08.15 Management of PS EASTERN DREAM (Car ferry)",
+    "y2023_3": "MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER",
+    "y2023_4": "MV SUN RIO (Ro-Ro ship)",
+    "y2024_1": "2024.01.01 Management of PS EASTERN VENUS (Cruise)",
+    "y2024_2": "2024.12.15 Management of MV ORIENTAL FRONTIER (Bulk)",
+    "y2025_1": "2025.02.07 Management of MV ORIENTAL ENTERPRISE (Bulk)"
   },
   "about": {
     "title": "We strive to build a human-centered organization and safety system.",

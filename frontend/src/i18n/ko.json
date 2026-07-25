@@ -7,6 +7,10 @@
     "contact": "문의하기"
   },
   "home": {
+    "crew_management_desc": "선간해운은 혁신적인 시스템을 도입하여 차별화된 선원 관리 서비스를 제공합니다...",
+    "ship_management_desc": "선간해운은 개방적인 의사소통을 통해 신뢰할 수 있는 선박 관리를 보장합니다...",
+    "repair_supply_desc": "경쟁력 있는 가격으로 선박 순정 부품 공급 가능",
+    "new_building_desc": "신조선 프로젝트를 위한 종합적인 감독 서비스 제공.",
     "establishmentdate": "성안 새로운 도전의 시작 2015.12.16",
     "title": "글로벌 해운 솔루션",
     "subtitle": "회사 설립의 목적은 선박 관리의 토탈 솔루션 서비스를 제공하는 것입니다.",
@@ -31,6 +35,27 @@
     "new_building": "신조 감리",
     "contact_us": "문의하기",
     "reach_out_text": "포괄적인 선박 관리 서비스에 대해 팀에 문의하세요."
+  },
+  "history": {
+    "y2015_1": "2015.12.15 회사 설립",
+    "y2016_1": "2016.02.01 사업 시작",
+    "y2016_2": "MV MAGIC ORIENT (벌크선) 관리",
+    "y2016_3": "2016.05.10 MV WOORI STAR (벌크선) 관리",
+    "y2018_1": "2018.02.10 MV AURORA (고속여객선) 관리",
+    "y2018_2": "2018.03.01 미얀마 양곤 지사 설립",
+    "y2020_1": "2020.07.10 MV WOORI SKY (벌크선) 관리",
+    "y2021_1": "2021.03.03 MV WOORI SUN (벌크선) 관리",
+    "y2021_2": "2021.09.19 부산 지사 설립",
+    "y2022_1": "2022.02.07 MV MAPLE MARINA (벌크선) 관리",
+    "y2022_2": "2022.06.27 MT STO AZALEA / MT STO CAMELLIA 관리",
+    "y2022_3": "MT STO LOBELIA (화학제품운반선)",
+    "y2023_1": "2023.07.03 MV HS GLORY (벌크선) 관리",
+    "y2023_2": "2023.08.15 PS EASTERN DREAM (카페리) 관리",
+    "y2023_3": "MV SUN STAR / MV OCEAN PRIDE 1 / MV OCEAN LEADER 관리",
+    "y2023_4": "MV SUN RIO (로로선)",
+    "y2024_1": "2024.01.01 PS EASTERN VENUS (크루즈) 관리",
+    "y2024_2": "2024.12.15 MV ORIENTAL FRONTIER (벌크선) 관리",
+    "y2025_1": "2025.02.07 MV ORIENTAL ENTERPRISE (벌크선) 관리"
   },
   "about": {
     "title": "인간 중심의 조직과 안전 시스템 구축에 최선을 다하겠습니다.",

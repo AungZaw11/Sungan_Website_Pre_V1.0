@@ -21,7 +21,7 @@ export default function Footer() {
                 SUNGAN <span className="text-red">SHIPPING</span>
               </span>
             </Link>
-            <p className="text-white/80 text-base leading-relaxed mt-4">
+            <p className="text-white/80 text-base leading-relaxed mt-4 break-keep">
               {t('footer.best_partner')}
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center text-white/60">
-          <p>© 2026 {t('footer.sungan_shipping')}. {t('footer.all_rights')}</p>
+          <p>© {new Date().getFullYear()} {t('footer.sungan_shipping')}. {t('footer.all_rights')}</p>
         </div>
       </div>
     </footer>
