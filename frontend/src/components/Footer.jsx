@@ -4,7 +4,9 @@ import Logo from '../images/logo.svg';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const isKorean = i18n.language === 'ko' || i18n.language === 'kr';
 
   return (
     <footer className="bg-primary pt-16 pb-8">
@@ -21,7 +23,8 @@ export default function Footer() {
                 SUNGAN <span className="text-red">SHIPPING</span>
               </span>
             </Link>
-            <p className="text-white/80 text-base leading-relaxed mt-4 break-keep">
+
+            <p className={`text-white/80 text-base leading-relaxed mt-4 pr-4 ${isKorean ? 'whitespace-nowrap' : 'break-words'}`}>
               {t('footer.best_partner')}
             </p>
           </div>

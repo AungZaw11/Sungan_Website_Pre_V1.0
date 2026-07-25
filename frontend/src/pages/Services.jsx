@@ -19,7 +19,6 @@ import TrainingImg from '../images/Training.png';
 import VerificationImg from '../images/New.png';
 import MyshipImg from '../images/myship.png';
 
-
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -98,7 +97,7 @@ export default function Services() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <SectionHeader title={t('services.crew_management')} />
 
-        <p className="text-lg text-body max-w-4xl leading-relaxed mb-12">
+        <p className="text-lg text-body max-w-4xl leading-relaxed mb-12 text-justify ">
           {t('services.crew_desc')}
         </p>
 
@@ -116,7 +115,15 @@ export default function Services() {
                 <img src={item.image} alt={item.title} className="w-15 h-15 object-contain" />
               </div>
               <h3 className="text-xl font-semibold text-body mb-4">{item.title}</h3>
-              <p className="text-body whitespace-pre-line">{item.desc}</p>
+
+              <ul className="space-y-2 text-left">
+                {item.desc.split('\n').map((line, index) => (
+                  <li key={index} className="text-body flex items-start gap-2">
+                    <span className="text-primary/60 mt-1.5 text-xs">•</span>
+                    <span className="flex-1 leading-relaxed">{line}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
@@ -147,7 +154,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto">
           <SectionHeader title={t('services.ship_management')} />
 
-          <p className="text-lg text-body max-w-4xl leading-relaxed mb-12">
+          <p className="text-body text-sm text-justify hyphens-auto leading-relaxed flex-grow max-w-4xl mb-12">
             {t('services.ship_desc')}
           </p>
 
@@ -180,14 +187,14 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-[14px] p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition-all cursor-pointer"
+                className="bg-white rounded-[14px] p-6 shadow-sm border border-gray-100 flex flex-col items-center hover:shadow-md transition-all cursor-pointer"
                 onClick={() => setSelectedPdf(cert.pdf)}
               >
                 <div className="w-24 h-32 bg-gray-50 rounded-lg mb-6 flex items-center justify-center border border-gray-200 hover:border-primary/30 transition-colors overflow-hidden">
                   <img src={cert.previewImg} alt={cert.title} className="w-full h-full object-cover rounded-lg" />
                 </div>
-                <h4 className="text-lg font-semibold text-body mb-3">{cert.title}</h4>
-                <p className="text-body text-sm">{cert.desc}</p>
+                <h4 className="text-lg font-semibold text-body mb-3 text-center">{cert.title}</h4>
+                <p className="text-body text-sm text-justify leading-relaxed flex-grow w-full">{cert.desc}</p>
                 <button
                   className="mt-4 text-primary text-sm font-medium hover:underline flex items-center gap-1"
                   onClick={(e) => {
@@ -266,7 +273,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ========== PDF Modal ========== */}
       {selectedPdf && (
         <div
           className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
